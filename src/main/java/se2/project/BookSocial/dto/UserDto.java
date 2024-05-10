@@ -6,11 +6,11 @@ public class UserDto {
     private String password;
     private String role;
     private String fullname;
-    public UserDto(String email, String password, String fullname, String role) {
+    public UserDto(String email, String password, String fullname) {
         this.email = email;
         this.password = password;
         this.fullname = fullname;
-        this.role = role;
+        this.role = "USER";
     }
 
     public String getEmail() {

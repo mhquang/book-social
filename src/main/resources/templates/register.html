@@ -5,59 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
 <!--    <link rel="stylesheet" th:href="@{../css/styles.css}">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        @charset "ISO-8859-1";
-
-body {
+        body {
             font-family: Arial, sans-serif;
-            background-color: #0e2433;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+            background-color: rgba(191, 160, 84, 0.11);
 
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #0e2433;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-
-        h2 {
-            color: #45b6fe;
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 75vh;
         }
-
-        .form-group {
-            margin-bottom: 20px;
+        .title h2 {
+            font-size: 30px;
+            font-family: "DM Serif Display";
         }
-
-        label {
-            display: block;
-            font-weight: bold;
+        .title {
+            margin-left: 20px
+        }
+        .header1 h2 {
             margin-bottom: 5px;
-            text-align: left;
+            font-family: "Kantumruy";
+            font-size: 28px;
         }
-
+        .header1 h1 {
+            margin-top: 5px;
+            font-family: "DM Serif Display";
+            font-size: 35px;
+        }
+        .header1 {
+            margin-bottom: 60px;
+        }
+        .text {
+            margin-top: 60px;
+        }
+        .text p {
+            font-size: 17px;
+            font-family: "Kantumruy";
+        }
+        .text span {
+            font-size: 17px;
+            font-family: "Kantumruy";
+        }
+        .text a {
+            color: #BFA054;
+            font-weight: bold;
+            font-size: 17px;
+            font-family: "Kantumruy";
+        }
+        .formContainer {
+            background-color: white;
+            border-radius: 20px;
+            width: 40%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .signin {
+            margin-bottom: 20px
+        }
+        .signin h2 {
+            font-size: 30px;
+            text-align: left;
+            font-family: "Kantumruy";
+        }
         input[type="text"],
         input[type="password"],
         input[type="email"] {
-            width: 100%;
-            padding: 10px;
+            font-family: "Kantumruy";
+            padding: 20px;
             border: none;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #0e2433;
+            width: 400px;
+            height: 25px;
+            margin-bottom: 45px;
+            color: #858585;
+            font-size: 15px;
+            border-radius: 8px;
+            background-color: rgba(191, 160, 84, 0.18);
         }
-
+        .password-field {
+            position: relative;
+        }
+        #toggler1 {
+            color: rgba(191, 160, 84, 1);
+        }
+        #toggler2 {
+            color: rgba(191, 160, 84, 1);
+        }
+        body .password-field #toggler1 {
+            position: absolute;
+            right: 20px;
+            top: 30%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        body .password-field #toggler2 {
+            position: absolute;
+            right: 20px;
+            top: 30%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
         input[type="submit"] {
-            background-color: #45b6fe;
+            font-family: "Poppins";
+            padding: 20px;
             color: white;
-            padding: 10px 20px;
+            width: 440px;
+            height: 65px;
             border: none;
-            border-radius: 5px;
+            font-size: 15px;
+            border-radius: 8px;
+            background-color: #BFA054;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
             cursor: pointer;
         }
 
@@ -72,45 +136,84 @@ body {
 </head>
 <body>
 <div class="container">
-    <div class="message" th:if="${message != null}">
-        [[${message}]]
+    <div class="title">
+        <h2>Bookaholic</h2>
     </div>
-    <h2>Registration Form</h2>
-    <form
-            th:action="@{/registration}"
-            id="registrationForm"
-            method="post"
-            role="form"
-            th:object="${user}"
-    >
-        <div class="form-group">
-            <label for="fullname">Fullname:</label>
-            <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter your fullname" required>
+    <div class="content">
+        <div class="intro">
+            <div class="header1">
+                <h2>Register to us</h2>
+                <h1>Bookaholic</h1>
+            </div>
+            <div class="text">
+                <p>If you already have an account</p>
+                <span>You can <a th:href="@{/login}">Log in here</a></span>
+            </div>
         </div>
+        <div class="formContainer">
+            <div class="signin">
+                <h2>Register</h2>
+            </div>
+            <form
+                    th:action="@{/registration}"
+                    id="registrationForm"
+                    method="post"
+                    role="form"
+                    th:object="${user}"
+            >
+                <div class="form-group">
+                    <label for="fullname"></label><input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter your fullname" required>
+                </div>
 
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
+                <div class="form-group">
+                    <label for="email"></label><input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span th:if="${userExisted}" id="message" style="color: red;">Email [[${user.getEmail()}]] is taken</span>
+                </div>
 
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div class="password-field">
+                    <label for="password"></label><input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span><i id="toggler1" class="far fa-eye"></i></span>
+                </div>
+                <div class="password-field">
+                    <label for="passwordCf"></label><input type="password" id="passwordCf" name="passwordCf" placeholder="Confirm your password" required>
+                    <span><i id="toggler2" class="far fa-eye"></i></span>
+                    <span id="passwordError" class="message" style="display: none;">Passwords do not match!</span>
+                </div>
+                <div class="message" th:if="${message != null}">
+                    [[${message}]]
+                </div>
+                <input type="submit" value="Register">
+            </form>
         </div>
-<!--        <div class="form-group">-->
-<!--            <label for="passwordCf">Password:</label>-->
-<!--            <input type="password" id="passwordCf" name="password" placeholder="Confirm your password" required>-->
-<!--            <span id="passwordError" class="message" style="display: none;">Passwords do not match!</span>-->
-<!--        </div>-->
-        <div>
-            <span style="color: white">Already have an account? <a th:href="@{/login}">Login here</a></span>
-        </div>
-        <input type="submit" value="Register">
-    </form>
-
+    </div>
 </div>
 </body>
-<!--<script>-->
+<script>
+    var password1 = document.getElementById('password');
+    var toggler1 = document.getElementById('toggler1');
+    showHidePassword1 = () => {
+    if (password1.type == 'password') {
+    password1.setAttribute('type', 'text');
+    toggler1.classList.add('fa-eye-slash');
+    } else {
+    toggler1.classList.remove('fa-eye-slash');
+    password1.setAttribute('type', 'password');
+    }
+    };
+    toggler1.addEventListener('click', showHidePassword1);
+
+    var password2 = document.getElementById('passwordCf');
+    var toggler2 = document.getElementById('toggler2');
+    showHidePassword2 = () => {
+    if (password2.type == 'password') {
+    password2.setAttribute('type', 'text');
+    toggler2.classList.add('fa-eye-slash');
+    } else {
+    toggler2.classList.remove('fa-eye-slash');
+    password2.setAttribute('type', 'password');
+    }
+    };
+    toggler2.addEventListener('click', showHidePassword2);
 <!--    document.getElementById('registrationForm').addEventListener('submit', function(event) {-->
 <!--        var password = document.getElementById('password').value;-->
 <!--        var confirmPassword = document.getElementById('passwordCf').value;-->
@@ -123,5 +226,5 @@ body {
 <!--            return () => clearTimeout(time);-->
 <!--        }-->
 <!--    });-->
-<!--</script>-->
+</script>
 </html>
