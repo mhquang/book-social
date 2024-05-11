@@ -51,11 +51,11 @@ public class UserController {
         return "login";
     }
 
-    @GetMapping("user-page")
+    @GetMapping("homepage")
     public String userPage(Model model, Principal principal) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
-        return "user";
+        return "homepage";
     }
 
     @GetMapping("admin-page")
