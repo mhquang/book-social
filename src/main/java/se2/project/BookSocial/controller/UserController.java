@@ -57,7 +57,12 @@ public class UserController {
         model.addAttribute("user", userDetails);
         return "homepage";
     }
-
+    @GetMapping("/browse")
+    public String getBrowse(Model model, Principal principal) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
+        return "browse";
+    }
     @GetMapping("admin-page")
     public String adminPage (Model model, Principal principal) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
