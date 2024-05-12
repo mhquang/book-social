@@ -4,33 +4,23 @@ import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    @Length(min = 6, max = 25)
-    private String email;
-
+    private String username;
     private String password;
-
-    @Length(min = 3, max = 30)
     private String fullname;
 
-    private String role;
-
     public User() {
-        super();
     }
 
-    public User(String email, String password, String fullname, String role) {
-        this.email = email;
-        this.password = password;
-        this.fullname = fullname;
-        this.role = role;
+    public User(UserTemplate userTemplate) {
+        this.username = userTemplate.getUsername();
+        this.password = userTemplate.getPassword();
+        this.fullname = userTemplate.getFullname();
     }
 
     public Long getId() {
@@ -41,12 +31,12 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -63,13 +53,5 @@ public class User {
 
     public void setFullname(String fullName) {
         this.fullname = fullName;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }

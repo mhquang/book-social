@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(191, 160, 84, 0.11);
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+}
+.title h2 {
+    font-size: 30px;
+    font-family: "DM Serif Display";
+}
+.title {
+    margin-left: 20px;
+}
+.header1 h2 {
+    margin-bottom: 5px;
+    font-family: "Kantumruy";
+    font-size: 28px;
+}
+.header1 h1 {
+    margin-top: 5px;
+    font-family: "DM Serif Display";
+    font-size: 35px;
+}
+.header1 {
+    margin-bottom: 60px;
+}
+.text {
+    margin-top: 60px;
+}
+.text p {
+    font-size: 17px;
+    font-family: "Kantumruy";
+}
+.text span {
+    font-size: 17px;
+    font-family: "Kantumruy";
+}
+.text a {
+    color: #bfa054;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: "Kantumruy";
+}
+.formContainer {
+    background-color: white;
+    border-radius: 20px;
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signin {
+    margin-bottom: 20px;
+}
+.signin h2 {
+    font-size: 30px;
+    text-align: left;
+    font-family: "Kantumruy";
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    font-family: "Kantumruy";
+    padding: 20px;
+    border: none;
+    width: 400px;
+    height: 25px;
+    margin-bottom: 45px;
+    color: #858585;
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: rgba(191, 160, 84, 0.18);
+}
+.password-field {
+    position: relative;
+}
+#toggler {
+    color: rgba(191, 160, 84, 1);
+}
+body .password-field #toggler {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+input[type="submit"] {
+    font-family: "Poppins";
+    padding: 20px;
+    color: white;
+    width: 440px;
+    height: 65px;
+    border: none;
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: #bfa054;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+.message {
+    background-color: #45b6fe;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
