@@ -4,11 +4,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UserController {
-
+public class MainController {
     @GetMapping("/home")
     public String home() {
-        System.out.println("home page");
         return "home";
+    }
+
+    @GetMapping("/browse")
+    public String browse() {
+        return "browse";
+    }
+
+    @GetMapping("/browse/toprated")
+    public String topRatedBook() {
+        return "toprated";
     }
 }

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Rated</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title h2 {
+            font-family: "DM Serif Display";
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navTab ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        .navTab a {
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            padding: 25px;
+            font-family: "DM Serif Display";
+            font-size: medium;
+            color: rgba(47, 47, 47, 1);
+            font-weight: bold;
+        }
+
+        .userNotify {
+            display: flex;
+            align-items: center;
+        }
+
+        .userNotify p {
+            margin-right: 20px;
+        }
+
+        .navTab li {
+            float: left;
+            margin-right: 80px;
+        }
+
+        .topnav {
+            background-color: rgba(245, 239, 225, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .topnav a:hover {
+            background-color: rgba(191, 160, 84, 1);
+            color: rgba(251, 248, 242, 1);
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .dropdown-content {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
+            display: none;
+            position: absolute;
+            min-width: 100px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            background-color: #FBF8F2;
+            color: #2F2F2F;
+            text-decoration: none;
+            display: block;
+            font-family: "Kantumruy";
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .topnav input[type=text] {
+            width: 280px;
+            background-color: #FBF8F2;
+            float: right;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            font-size: 15px;
+        }
+
+        /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+        @media screen and (max-width: 600px) {
+
+            .topnav a,
+            .topnav input[type=text] {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+        .icon-button {
+            margin-right: 30px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            color: #333333;
+            background: #dddddd;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+        }
+
+        .icon-button:hover {
+            cursor: pointer;
+        }
+
+        .icon-button:active {
+            background: #cccccc;
+        }
+
+        .icon-button__badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 13px;
+            height: 13px;
+            background: red;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .container {
+            margin-left: 180px;
+            margin-right: 180px;
+            padding: 50px;
+            background-color: rgba(251, 248, 242, 1);
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .container h3 {
+            font-size: 30px;
+            font-family: "DM Serif Display";
+            color: #2F2F2F;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+
+        .bookCoverImg img {
+            width: 200px;
+            height: 290px;
+        }
+
+        .bookCoverImg {
+            flex: 1;
+        }
+
+        .bookInfo {
+            flex: 3;
+        }
+
+        .bookInfo h3,
+        .bookInfo h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .bookInfo h3 {
+            font-family: "DM Serif Display";
+            font-size: 25px;
+            color: #2F2F2F;
+        }
+
+        .bookInfo h4 {
+            font-family: "Kantumruy";
+            font-size: 16px;
+            font-weight: 500;
+            color: #858585;
+        }
+
+        .seemore a {
+            font-weight: 700;
+            font-family: "Kantumruy";
+            color: #BFA054;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .ratings {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .ratings h4 {
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .buttons {
+            flex: 1;
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .buttons .btn1 {
+            margin-bottom: 25px;
+            border-radius: 15px;
+            padding: 10px;
+            text-decoration: none;
+            border: none;
+            font-family: "Kantumruy";
+            font-size: 15px;
+            font-weight: 400;
+            color: #2F2F2F;
+            background-color: #BFA054;
+            cursor: pointer;
+
+        }
+
+        .buttons .btn2 {
+            border-radius: 15px;
+            padding: 10px;
+            text-decoration: none;
+            border-width: 1px;
+            font-family: "Kantumruy";
+            font-size: 15px;
+            font-weight: 400;
+            color: #2F2F2F;
+            background-color: #FBF8F2;
+            cursor: pointer;
+        }
+
+        .footerContainer {
+            flex: 1;
+            padding: 60px;
+            background-color: rgba(47, 47, 47, 1);
+            color: #fff;
+        }
+
+        .ourInfo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            border-bottom: 1px solid #BBBBBB;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .opentime,
+        .address {
+            margin-right: 150px;
+        }
+
+        .opentime h4 {
+            font-family: "Roboto";
+            font-weight: 700;
+        }
+
+        .opentime h5 {
+            font-family: "Roboto";
+            font-weight: 400;
+        }
+
+        .address h4 {
+            font-family: "Roboto";
+            font-weight: 700;
+        }
+
+        .address h5 {
+            font-family: "Roboto";
+            font-weight: 400;
+        }
+
+        .contact h4 {
+            font-family: "Roboto";
+            font-weight: 700;
+        }
+
+        .contact h5 {
+            font-family: "Roboto";
+            font-weight: 400;
+        }
+
+        .emailContainer,
+        .phoneContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        .phoneContainer {
+            margin-left: 3px;
+        }
+
+        .emailContainer {
+            width: 232.557px;
+            height: 15.273px;
+        }
+
+        .emailContainer i,
+        .phoneContainer i {
+            margin-right: 10px;
+        }
+
+        .allRightR {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .reservedContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        .socialIcons {
+            display: flex;
+            align-items: center;
+        }
+
+        .socialIcons i {
+            margin-right: 10px;
+        }
+
+        .topRated,
+        .trending,
+        .genres,
+        .author {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .topRatedContainer,
+        .trendingContainer,
+        .genresContainer,
+        .authorContainer {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topRatedContainer button,
+        .trendingContainer button,
+        .genresContainer button,
+        .authorContainer button {
+            text-decoration: none;
+            border: none;
+            background-color: #BFA054;
+            color: #2F2F2F;
+            font-family: "Kantumruy";
+            padding: 10px 40px;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .topRatedContainer h3,
+        .trendingContainer h3,
+        .genresContainer h3,
+        .authorContainer h3 {
+            font-family: "DM Serif Display";
+            font-size: 20px;
+        }
+
+        .topRatedContainer button:hover,
+        .trendingContainer button:hover,
+        .genresContainer button:hover,
+        .authorContainer button:hover {
+            background-color: #ddd1b1;
+        }
+    </style>
+</head>
+
+<body>
+<nav class="topnav">
+    <div class="title">
+        <h2>Bookaholic</h2>
+    </div>
+    <div class="navTab">
+        <ul>
+            <li><a href="#home">My Books</a></li>
+            <li><a href="#news">My Quotes</a></li>
+            <li class="dropdown">
+                <a th:href="@{/browse}">Browse</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/toprated}">Top rated</a>
+                    <a href="#">Trending</a>
+                    <a href="#">Genres</a>
+                    <a href="#">Author</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="searchBar">
+        <input type="text" placeholder="Search">
+    </div>
+    <div class="userNotify">
+        <button type="button" class="icon-button">
+            <span class="material-icons">notifications</span>
+            <span class="icon-button__badge"></span>
+        </button>
+        <button type="button" class="icon-button">
+            <span class="material-icons">notifications</span>
+        </button>
+        <span>
+                <a th:href="@{/logout}">
+                    <i class="fa fa-sign-out" style="font-size:20px;color:#2F2F2F;"></i>
+                </a>
+            </span>
+    </div>
+
+</nav>
+<main>
+    <div class="container">
+        <h3>Top rated</h3>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                    <!-- <h4>See more</h4> -->
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footerContainer">
+        <div class="ourInfo">
+            <div class="logo">
+                <h3>Logo</h3>
+            </div>
+            <div class="info">
+                <div class="opentime">
+                    <h4>Opening hours</h4>
+                    <h5>Weekdays: Timings
+                    </h5>
+                    <h5>Saturday, Sunday: Timings
+                    </h5>
+                </div>
+                <div class="address">
+                    <h4>Address</h4>
+                    <h5>Level 1, 12 Sample St, Sydney NSW 2000</h5>
+                </div>
+                <div class="contact">
+                    <h4>Contact</h4>
+                    <div class="emailContainer">
+                        <i class="material-icons">email</i>
+                        <h5>info@example.com</h5>
+                    </div>
+                    <div class="phoneContainer">
+                        <i class="fas fa-phone"></i>
+                        <h5>(270) 555-0117</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="allRightR">
+            <div class="reservedContainer">
+                <h5>&#174</h5>
+                <h5>2024, All right reserved.</h5>
+            </div>
+            <div class="socialIcons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script>
+</script>
+
+</html>
