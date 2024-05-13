@@ -1,6 +1,8 @@
 package se2.project.BookSocial.controller;
 
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +14,12 @@ import se2.project.BookSocial.repository.UserRepository;
 
 @Controller
 public class AuthController {
-    UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public AuthController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public AuthController(BCryptPasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/login")
@@ -35,10 +39,18 @@ public class AuthController {
         User user = userRepository.findByUsername(userTemplate.getUsername());
         if (user != null) {
             model.addAttribute("userExisted", user);
+            return "register";
         } else {
             model.addAttribute("user", userTemplate);
             model.addAttribute("message", "Registered Successfully!");
+
+            User newUser = new User();
+            newUser.setUsername(userTemplate.getUsername());
+            newUser.setPassword(passwordEncoder.encode(userTemplate.getPassword()));
+            newUser.setFullname(userTemplate.getFullname());
+            userRepository.save(newUser);
+
+            return "redirect:/login";
         }
-        return "register";
     }
 }
