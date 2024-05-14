@@ -150,6 +150,16 @@
     border-radius: 50%;
 }
 
+.userAvatarBtn img {
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+}
+
+.userAvatarBtn {
+    margin-right: 25px;
+}
+
 .footerContainer {
     flex: 1;
     padding: 60px;

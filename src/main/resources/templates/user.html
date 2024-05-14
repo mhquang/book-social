@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="en"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="_layout">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+  <title>Bookaholic</title>
     <link href="/css/user.css" rel="stylesheet">
     <script type="text/javascript" th:src="@{/js/user.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,229 +15,229 @@
 </head>
 <body>
 <div class="container" layout:fragment="content">
-        <div class="userInfo">
-            <div class="userAvatar">
-                <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                     alt="userAvatar" />
-            </div>
-            <div class="userDetail">
-                <div class="userName">
-                    <h3>Brook</h3>
-                    <button>
-                        Edit Profile
-                    </button>
-                </div>
-                <div class="follow">
-                    <div class="followers">
-                        <h3>239 Followers</h3>
-                    </div>
-                    <div class="following">
-                        <h3>122 Following</h3>
-                    </div>
-                </div>
-                <div class="bio">
-                    <p>Lorem, ipsum</p>
-                </div>
-            </div>
+    <div class="userInfo">
+        <div class="userAvatar">
+            <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                 alt="userAvatar"/>
         </div>
-        <div class="bookShelves">
-            <h2>My Bookshelves</h2>
-            <div class="bookShelvesContent">
-                <div class="bookTag">
-                    <button>
-                        Read
-                    </button>
-                </div>
-                <div class="books">
-                    <div class="content">
-                        <div class="bookCoverImg">
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                 alt="bookCover">
-                        </div>
-                        <div class="bookInfo">
-                            <div class="bookName">
-                                <h3>The Book of Art</h3>
-                            </div>
-                            <div class="bookAuthor">
-                                <h4>Author</h4>
-                            </div>
-                            <div class="ratings">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <h4>50 Ratings</h4>
-                            </div>
-                            <div class="briefContent">
-                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
-                                    aliquam. Dolorem
-                                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
-                                    commodi
-                                    nam iste dolor
-                                    similique inventore vel?</h4>
-                            </div>
-                            <div class="seemore">
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
-                                    enim possimus
-                                    commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="bookCoverImg">
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                 alt="bookCover">
-                        </div>
-                        <div class="bookInfo">
-                            <div class="bookName">
-                                <h3>The Book of Art</h3>
-                            </div>
-                            <div class="bookAuthor">
-                                <h4>Author</h4>
-                            </div>
-                            <div class="ratings">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <h4>50 Ratings</h4>
-                            </div>
-                            <div class="briefContent">
-                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
-                                    aliquam. Dolorem
-                                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
-                                    commodi
-                                    nam iste dolor
-                                    similique inventore vel?</h4>
-                            </div>
-                            <div class="seemore">
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
-                                    enim possimus
-                                    commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="bookCoverImg">
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                 alt="bookCover">
-                        </div>
-                        <div class="bookInfo">
-                            <div class="bookName">
-                                <h3>The Book of Art</h3>
-                            </div>
-                            <div class="bookAuthor">
-                                <h4>Author</h4>
-                            </div>
-                            <div class="ratings">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <h4>50 Ratings</h4>
-                            </div>
-                            <div class="briefContent">
-                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
-                                    aliquam. Dolorem
-                                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
-                                    commodi
-                                    nam iste dolor
-                                    similique inventore vel?</h4>
-                            </div>
-                            <div class="seemore">
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
-                                    enim possimus
-                                    commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="bookCoverImg">
-                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                 alt="bookCover">
-                        </div>
-                        <div class="bookInfo">
-                            <div class="bookName">
-                                <h3>The Book of Art</h3>
-                            </div>
-                            <div class="bookAuthor">
-                                <h4>Author</h4>
-                            </div>
-                            <div class="ratings">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <h4>50 Ratings</h4>
-                            </div>
-                            <div class="briefContent">
-                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
-                                    aliquam. Dolorem
-                                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
-                                    commodi
-                                    nam iste dolor
-                                    similique inventore vel?</h4>
-                            </div>
-                            <div class="seemore">
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
-                                    enim possimus
-                                    commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="myQuotes">
-            <div class="quotes">
-                <h2>My Quotes</h2>
+        <div class="userDetail">
+            <div class="userName">
+                <h3>Brook</h3>
                 <button>
-                    Show More
+                    Edit Profile
                 </button>
             </div>
-            <div class="quotesContent">
-                <div class="quotes1">
-                    <div class="avatarVsIcon">
-                        <div class="avatarVsName">
-                            <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                                 alt="avatar">
-                            <h3>Jess Santiago</h3>
-                        </div>
-                        <i class="fa fa-heart-o" style="font-size:25px;color:#000001"></i>
+            <div class="follow">
+                <div class="followers">
+                    <h3>239 Followers</h3>
+                </div>
+                <div class="following">
+                    <h3>122 Following</h3>
+                </div>
+            </div>
+            <div class="bio">
+                <p>Lorem, ipsum</p>
+            </div>
+        </div>
+    </div>
+    <div class="bookShelves">
+        <h2>My Bookshelves</h2>
+        <div class="bookShelvesContent">
+            <div class="bookTag">
+                <button>
+                    Read
+                </button>
+            </div>
+            <div class="books">
+                <div class="content">
+                    <div class="bookCoverImg">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                             alt="bookCover">
                     </div>
-                    <div class="quotesMainContent">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
-                            voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
-                            maxime ea architecto earum, in ipsa quis quia.
-                        </p>
+                    <div class="bookInfo">
+                        <div class="bookName">
+                            <h3>The Book of Art</h3>
+                        </div>
+                        <div class="bookAuthor">
+                            <h4>Author</h4>
+                        </div>
+                        <div class="ratings">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h4>50 Ratings</h4>
+                        </div>
+                        <div class="briefContent">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
+                                aliquam. Dolorem
+                                maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
+                                commodi
+                                nam iste dolor
+                                similique inventore vel?</h4>
+                        </div>
+                        <div class="seemore">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
+                                enim possimus
+                                commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                        </div>
                     </div>
                 </div>
-                <div class="quotes1">
-                    <div class="avatarVsIcon">
-                        <div class="avatarVsName">
-                            <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                                 alt="avatar">
-                            <h3>Jess Santiago</h3>
+                <div class="content">
+                    <div class="bookCoverImg">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                             alt="bookCover">
+                    </div>
+                    <div class="bookInfo">
+                        <div class="bookName">
+                            <h3>The Book of Art</h3>
                         </div>
-                        <i class="fa fa-heart-o"
-                           style="font-size:25px;color:#000001"></i>
+                        <div class="bookAuthor">
+                            <h4>Author</h4>
+                        </div>
+                        <div class="ratings">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h4>50 Ratings</h4>
+                        </div>
+                        <div class="briefContent">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
+                                aliquam. Dolorem
+                                maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
+                                commodi
+                                nam iste dolor
+                                similique inventore vel?</h4>
+                        </div>
+                        <div class="seemore">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
+                                enim possimus
+                                commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                        </div>
                     </div>
-                    <div class="quotesMainContent">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
-                            voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
-                            maxime ea architecto earum, in ipsa quis quia.
-                        </p>
+                </div>
+                <div class="content">
+                    <div class="bookCoverImg">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                             alt="bookCover">
                     </div>
+                    <div class="bookInfo">
+                        <div class="bookName">
+                            <h3>The Book of Art</h3>
+                        </div>
+                        <div class="bookAuthor">
+                            <h4>Author</h4>
+                        </div>
+                        <div class="ratings">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h4>50 Ratings</h4>
+                        </div>
+                        <div class="briefContent">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
+                                aliquam. Dolorem
+                                maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
+                                commodi
+                                nam iste dolor
+                                similique inventore vel?</h4>
+                        </div>
+                        <div class="seemore">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
+                                enim possimus
+                                commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="bookCoverImg">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                             alt="bookCover">
+                    </div>
+                    <div class="bookInfo">
+                        <div class="bookName">
+                            <h3>The Book of Art</h3>
+                        </div>
+                        <div class="bookAuthor">
+                            <h4>Author</h4>
+                        </div>
+                        <div class="ratings">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <h4>50 Ratings</h4>
+                        </div>
+                        <div class="briefContent">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
+                                aliquam. Dolorem
+                                maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
+                                commodi
+                                nam iste dolor
+                                similique inventore vel?</h4>
+                        </div>
+                        <div class="seemore">
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis
+                                enim possimus
+                                commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="myQuotes">
+        <div class="quotes">
+            <h2>My Quotes</h2>
+            <button>
+                Show More
+            </button>
+        </div>
+        <div class="quotesContent">
+            <div class="quotes1">
+                <div class="avatarVsIcon">
+                    <div class="avatarVsName">
+                        <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                             alt="avatar">
+                        <h3>Jess Santiago</h3>
+                    </div>
+                    <i class="fa fa-heart-o" style="font-size:25px;color:#000001"></i>
+                </div>
+                <div class="quotesMainContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
+                        voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
+                        maxime ea architecto earum, in ipsa quis quia.
+                    </p>
+                </div>
+            </div>
+            <div class="quotes1">
+                <div class="avatarVsIcon">
+                    <div class="avatarVsName">
+                        <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                             alt="avatar">
+                        <h3>Jess Santiago</h3>
+                    </div>
+                    <i class="fa fa-heart-o"
+                       style="font-size:25px;color:#000001"></i>
+                </div>
+                <div class="quotesMainContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
+                        voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
+                        maxime ea architecto earum, in ipsa quis quia.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
