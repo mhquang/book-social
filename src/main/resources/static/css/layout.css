@@ -35,7 +35,19 @@
     float: left;
     width: 150px;
 }
+.userAvatarBtn img {
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+}
 
+.userAvatarBtn {
+    margin-right: 25px;
+}
+.userAvatarBtn img:hover {
+    border: 2px solid #BFA054;
+    border-radius: 17.5px;
+}
 .navTab a {
     text-align: center;
     text-decoration: none;

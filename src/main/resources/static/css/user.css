@@ -1,0 +1,303 @@
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-left: 180px;
+            margin-right: 180px;
+            padding: 50px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .userInfo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #858585;
+            padding: 20px;
+        }
+
+        .userDetail {
+            margin-left: 50px;
+        }
+
+        .userName {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 40px;
+        }
+
+        .userName h3 {
+            font-family: "DM Serif Display", serif;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .userName button {
+            margin-left: 60px;
+            text-decoration: none;
+            border: none;
+            font-weight: 400;
+            background-color: #BFA054;
+            color: #2F2F2F;
+            font-family: "Kantumruy", sans-serif;
+            padding: 10px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .follow {
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+        }
+
+        .follow h3 {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .following {
+            margin-left: 60px;
+        }
+
+        .following h3 {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .bio {
+            display: flex;
+            height: 40px;
+            align-items: center;
+        }
+
+
+        .userAvatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 76px;
+        }
+
+        .bookShelvesContent {
+            border-bottom: 1px solid #858585;
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+
+        .bookTag {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #858585;
+            margin-right: 30px;
+        }
+
+        .bookTag button {
+            border-radius: 15px;
+            padding: 10px;
+            text-decoration: none;
+            border-width: 1px;
+            font-family: "Kantumruy", sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #2F2F2F;
+            background-color: #FBF8F2;
+            cursor: pointer;
+            width: 285px;
+        }
+
+        .books {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+
+        .bookCoverImg img {
+            width: 200px;
+            height: 290px;
+        }
+
+        .bookCoverImg {
+            flex: 1;
+        }
+
+        .bookInfo {
+            flex: 3.5;
+        }
+
+        .bookName {
+            height: 28.36px;
+            margin-bottom: 11px;
+        }
+
+        .bookAuthor {
+            height: 18.91px;
+            margin-bottom: 15px;
+        }
+
+        .bookInfo h3,
+        .bookInfo h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .bookInfo h3 {
+            font-family: "DM Serif Display", serif;
+            color: #2F2F2F;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 1.28px;
+            text-transform: capitalize;
+        }
+
+        .bookInfo h4 {
+            font-family: "Kantumruy", sans-serif;
+            color: #858585;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: -0.32px;
+        }
+
+        .seemore a {
+            font-weight: 700;
+            font-family: "Kantumruy", sans-serif;
+            color: #BFA054;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .ratings {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 18.91px;
+            margin-bottom: 20px;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .ratings h4 {
+            margin-left: 5px;
+            margin-top: 15px;
+        }
+
+        .myQuotes {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quotes {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quotes button {
+            text-decoration: none;
+            border: none;
+            font-weight: 400;
+            background-color: #BFA054;
+            color: #2F2F2F;
+            font-family: "Kantumruy", sans-serif;
+            padding: 10px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .avatarVsIcon {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .avatarVsName {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        .avatarVsName h3 {
+            color: var(--Primary-1, #2F2F2F);
+            margin-left: 20px;
+            font-family: "DM Serif Display", serif;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            width: 300px;
+        }
+
+        .avatarVsName img {
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+        }
+
+        .quotesMainContent {
+            width: 800px;
+            color: var(--Text-txt-primary, #000);
+            font-family: "Kantumruy", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .quotesContent {
+            display: grid;
+            gap: 35px;
+        }
+
+        .quotes1 {
+            width: 800px;
+            padding: 20px;
+            background-color: var(--Secondary-3, #FBF8F2);
+            border-radius: 18px;
+        }
