@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="_layout">
 
@@ -7,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookaholic</title>
+    <script type="text/javascript" th:src="@{/js/toprated.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link href="/css/toprated.css" rel="stylesheet">
@@ -14,11 +16,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
           rel="stylesheet">
-    <script type="text/javascript" th:src="@{/js/toprated.js}" defer></script>
+
 </head>
 <body>
 <div class="container" layout:fragment="content">
     <h3>Top rated</h3>
+    <div class="form-popup" id="wantToReadForm">
+        <form class="form-container">
+            <h3>Add book to bookshelf</h3>
+            <div class="bookshelf">
+                <h2>Bookshelf</h2>
+                <button>
+                    Want To Read
+                </button>
+            </div>
+            <div class="tag">
+                <h2>Tag</h2>
+                <input type="checkbox" id="Romantic" name="romantic" value="value1">
+                <label for="romantic">Romantic</label><br>
+                <input type="checkbox" id="School" name="school" value="value2">
+                <label for="school">School</label><br>
+                <input type="checkbox" id="Mystery" name="mystery" value="value3">
+                <label for="mystery">Mystery</label><br><br>
+            </div>
+            <div class="postBtn">
+                <button type="button" class="post" onclick="postTag()">Post</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="content">
         <div class="bookCoverImg">
             <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
@@ -45,7 +71,7 @@
             <button class="btn1">
                 Book Detail
             </button>
-            <button class="btn2">
+            <button class="btn2" onclick="showForm()">
                 Want To Read
             </button>
         </div>
@@ -172,7 +198,4 @@
     </div>
 </div>
 </body>
-<script>
-</script>
-
 </html>
