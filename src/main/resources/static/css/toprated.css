@@ -4,24 +4,21 @@ body {
 }
 
 .container {
-    margin-left: 180px;
-    margin-right: 180px;
-    padding: 50px;
+    padding: 0 120px 50px;
     background-color: rgba(251, 248, 242, 1);
     display: flex;
-    flex: 1;
     flex-direction: column;
     min-height: 70vh;
 }
 
-main {
-    flex: 1;
-}
-
 .container h3 {
-    font-size: 30px;
-    font-family: "DM Serif Display";
-    color: #2F2F2F;
+    font-family: "DM Serif Display", serif;
+    color: rgba(0, 0, 0, 1);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 20px 0;
 }
 
 .content {
@@ -54,31 +51,19 @@ main {
 }
 
 .bookInfo h3 {
-    font-family: "DM Serif Display";
-    font-size: 25px;
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    text-transform: capitalize;
     color: #2F2F2F;
-}
-
-.bookInfo h4 {
-    font-family: "Kantumruy";
-    font-size: 16px;
-    font-weight: 500;
-    color: #858585;
-}
-
-.seemore a {
-    font-weight: 700;
-    font-family: "Kantumruy";
-    color: #BFA054;
-    cursor: pointer;
-    font-weight: 700;
 }
 
 .ratings {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .checked {
@@ -90,37 +75,49 @@ main {
     margin-top: 15px;
 }
 
+.bookInfo h4 {
+    color: rgba(133, 133, 133, 1);
+    margin-bottom: 5px;
+    margin-top: 8px;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 22px;
+    letter-spacing: -0.32px;
+}
+
 .buttons {
     flex: 1;
-    margin-left: 50px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .buttons .btn1 {
-    margin-bottom: 25px;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px 60px;
     text-decoration: none;
     border: none;
-    font-family: "Kantumruy";
-    font-size: 15px;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 16px;
     font-weight: 400;
     color: #2F2F2F;
     background-color: #BFA054;
     cursor: pointer;
-
 }
 
 .buttons .btn2 {
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px 60px;
     text-decoration: none;
     border-width: 1px;
-    font-family: "Kantumruy";
-    font-size: 15px;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 16px;
     font-weight: 400;
     color: #2F2F2F;
     background-color: #FBF8F2;
     cursor: pointer;
 }
+

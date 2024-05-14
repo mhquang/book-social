@@ -16,6 +16,7 @@
     line-height: normal;
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
+    margin-left: 30px;
 }
 
 .navTab {
@@ -28,25 +29,11 @@
     margin: 0;
     overflow: hidden;
     display: flex;
-    gap: 50px;
 }
 
 .navTab li {
     float: left;
     width: 150px;
-}
-.userAvatarBtn img {
-    width: 35px;
-    height: 35px;
-    border-radius: 17.5px;
-}
-
-.userAvatarBtn {
-    margin-right: 25px;
-}
-.userAvatarBtn img:hover {
-    border: 2px solid #BFA054;
-    border-radius: 17.5px;
 }
 .navTab a {
     text-align: center;
@@ -93,6 +80,16 @@
     display: block;
 }
 
+.topnav input[type=text] {
+    width: 300px;
+    background-color: #FBF8F2;
+    float: right;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
 .userNotify {
     display: flex;
     align-items: center;
@@ -100,16 +97,6 @@
 
 .userNotify p {
     margin-right: 20px;
-}
-
-.topnav input[type=text] {
-    width: 280px;
-    background-color: #FBF8F2;
-    float: right;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    font-size: 15px;
 }
 
 
@@ -153,11 +140,16 @@
 .userAvatarBtn img {
     width: 35px;
     height: 35px;
-    border-radius: 17.5px;
+    border-radius: 18px;
 }
 
 .userAvatarBtn {
     margin-right: 25px;
+}
+
+.userAvatarBtn img:hover {
+    border: 2px solid #BFA054;
+    border-radius: 18px;
 }
 
 .footerContainer {

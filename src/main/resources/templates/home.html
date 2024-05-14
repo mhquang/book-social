@@ -47,9 +47,7 @@
                         <p>Ratings</p>
                     </div>
                 </div>
-                <button class="see-more-cur">
-                    See more
-                </button>
+                <a class="see-more-cur">See more</a>
             </div>
             <br>
             <div class="curReading">
@@ -78,10 +76,9 @@
                         <p>Ratings</p>
                     </div>
                 </div>
-                <button class="see-more-cur">
-                    See more
-                </button>
+                <a class="see-more-cur">See more</a>
             </div>
+            <br>
             <div class="curReading">
                 <h2>Read</h2>
                 <div class="bookList">
@@ -108,9 +105,7 @@
                         <p>Ratings</p>
                     </div>
                 </div>
-                <button class="see-more-cur">
-                    See more
-                </button>
+                <a class="see-more-cur">See more</a>
             </div>
         </nav>
     </aside>
@@ -121,52 +116,38 @@
                 <ul class="carousel">
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                     <li class="card" onclick="handleCardClick()">
                         <div class="img"><img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
+                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
                                 alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
                     </li>
                 </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
@@ -184,7 +165,9 @@
                     <span class="fa fa-star"></span>
                     <h4>50 Ratings</h4>
                 </div>
-                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
+                <h4 class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
+                    sapiente, natus id ea cupiditate odit quibusdam eum possimus placeat sed quae animi
+                    facere deleniti itaque necessitatibus ab aperiam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
                     sapiente, natus id ea cupiditate odit quibusdam eum possimus placeat sed quae animi
                     facere deleniti itaque necessitatibus ab aperiam!</h4>
             </div>

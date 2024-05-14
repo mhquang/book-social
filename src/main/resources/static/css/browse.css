@@ -4,20 +4,74 @@ body {
 }
 
 .container {
-    margin-left: 180px;
-    margin-right: 180px;
-    padding: 50px;
+    padding: 0 50px;
     background-color: rgba(251, 248, 242, 1);
     display: flex;
-    flex: 1;
     flex-direction: column;
     min-height: 70vh;
     align-items: center;
     justify-content: center;
 }
 
-main {
+.topRated,
+.trending,
+.genres,
+.author {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    margin-bottom: 20px;
+}
+
+.topRatedContainer,
+.trendingContainer,
+.genresContainer,
+.authorContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 5px;
+}
+
+.topRatedContainer h3,
+.trendingContainer h3,
+.genresContainer h3,
+.authorContainer h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 40px */
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.topRatedContainer button,
+.trendingContainer button,
+.genresContainer button,
+.authorContainer button {
+    text-decoration: none;
+    border: none;
+    background-color: rgba(191, 160, 84, 1);
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    color: rgba(47, 47, 47, 1);
+    font-family: "Kantumruy", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    text-transform: capitalize;
+}
+
+.topRatedContainer button:hover,
+.trendingContainer button:hover,
+.genresContainer button:hover,
+.authorContainer button:hover {
+    background-color: rgba(191, 160, 84, 0.8);
 }
 
 .sliderContainer {
@@ -70,7 +124,6 @@ main {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 16px;
-    border-radius: 8px;
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
@@ -101,34 +154,51 @@ main {
 
 .carousel .card {
     scroll-snap-align: start;
-    height: 342px;
+    max-height: 400px;
     list-style: none;
     background: #fff;
     cursor: pointer;
-    padding-bottom: 15px;
     flex-direction: column;
-    border-radius: 8px;
+    max-width: 100%;
 }
 
 .carousel .card .img {
-    background: #8B53FF;
-    height: 148px;
-    width: 148px;
-    border-radius: 50%;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card .img img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    height: 300px;
+    width: 100%;
     object-fit: cover;
-    border: 4px solid #fff;
 }
 
-.carousel .card h2 {
-    font-weight: 500;
-    font-size: 1.56rem;
-    margin: 30px 0 5px;
+.carousel .card h3 {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 10px 0
+}
+
+.carousel .card h4 {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-family: "Kantumruy", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    text-transform: capitalize;
+    margin: 0 0 10px;
 }
 
 .carousel .card span {
@@ -150,55 +220,4 @@ main {
 
 .card:hover {
     background-color: #F5EFE1;
-}
-
-.topRated,
-.trending,
-.genres,
-.author {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-bottom: 20px;
-}
-
-.topRatedContainer,
-.trendingContainer,
-.genresContainer,
-.authorContainer {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.topRatedContainer button,
-.trendingContainer button,
-.genresContainer button,
-.authorContainer button {
-    text-decoration: none;
-    border: none;
-    background-color: #BFA054;
-    color: #2F2F2F;
-    font-family: "Kantumruy";
-    padding: 10px 40px;
-    border-radius: 10px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.topRatedContainer h3,
-.trendingContainer h3,
-.genresContainer h3,
-.authorContainer h3 {
-    font-family: "DM Serif Display";
-    font-size: 20px;
-}
-
-.topRatedContainer button:hover,
-.trendingContainer button:hover,
-.genresContainer button:hover,
-.authorContainer button:hover {
-    background-color: #ddd1b1;
 }
