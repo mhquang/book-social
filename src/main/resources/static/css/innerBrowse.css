@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    padding: 0 120px 50px;
+    padding: 0 180px 50px;
     background-color: rgba(251, 248, 242, 1);
     display: flex;
     flex-direction: column;
@@ -14,10 +14,11 @@ body {
 .container h3 {
     font-family: "DM Serif Display", serif;
     color: rgba(0, 0, 0, 1);
-    font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    font-size: 32px;
+    line-height: 125%; /* 40px */
+    text-transform: capitalize;
     margin: 20px 0;
 }
 
@@ -110,7 +111,7 @@ body {
 
 .buttons .btn2 {
     border-radius: 15px;
-    padding: 15px 60px;
+    padding: 15px 50px;
     text-decoration: none;
     border-width: 1px;
     font-family: "Kantumruy Pro", sans-serif;
@@ -121,3 +122,6 @@ body {
     cursor: pointer;
 }
 
+.btn1:hover {
+    background-color:  rgb(191, 160, 84, 0.8);
+}

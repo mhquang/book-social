@@ -26,7 +26,7 @@ body {
 .topRatedContainer,
 .trendingContainer,
 .genresContainer,
-.authorContainer {
+.authorContainer{
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -48,10 +48,10 @@ body {
     margin: 0;
 }
 
-.topRatedContainer button,
-.trendingContainer button,
-.genresContainer button,
-.authorContainer button {
+.topRatedContainer a,
+.trendingContainer a,
+.genresContainer a,
+.authorContainer a {
     text-decoration: none;
     border: none;
     background-color: rgba(191, 160, 84, 1);
@@ -67,10 +67,10 @@ body {
     text-transform: capitalize;
 }
 
-.topRatedContainer button:hover,
-.trendingContainer button:hover,
-.genresContainer button:hover,
-.authorContainer button:hover {
+.topRatedContainer a:hover,
+.trendingContainer a:hover,
+.genresContainer a:hover,
+.authorContainer a:hover {
     background-color: rgba(191, 160, 84, 0.8);
 }
 

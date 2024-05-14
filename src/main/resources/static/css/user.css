@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -7,15 +6,15 @@ body {
 .container {
     margin-left: 180px;
     margin-right: 180px;
-    padding: 50px;
     display: flex;
     flex: 1;
     flex-direction: column;
-    min-height: 70vh;
 }
 
-main {
-    flex: 1;
+.userAvatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 76px;
 }
 
 .userInfo {
@@ -23,8 +22,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #858585;
-    padding: 20px;
+    padding: 50px;
 }
 
 .userDetail {
@@ -40,8 +38,13 @@ main {
 
 .userName h3 {
     font-family: "DM Serif Display", serif;
-    font-size: 30px;
+    font-size: 36px;
     text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: 1.28px;
+    text-transform: capitalize;
 }
 
 .userName button {
@@ -50,16 +53,14 @@ main {
     border: none;
     font-weight: 400;
     background-color: #BFA054;
-    color: #2F2F2F;
     font-family: "Kantumruy", sans-serif;
     padding: 10px 40px;
     border-radius: 10px;
     cursor: pointer;
-    color: #000;
+    color: rgba(0, 0, 0, 1);
     font-size: 16px;
     font-style: normal;
     line-height: 125%;
-    letter-spacing: 0.64px;
     text-transform: capitalize;
 }
 
@@ -69,35 +70,67 @@ main {
     height: 40px;
 }
 
+.followers {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 .follow h3 {
-    font-weight: 600;
-    font-size: 15px;
+    font-family: "Kantumruy", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 0.96px;
+    text-transform: capitalize;
+    color: rgba(133, 133, 133, 1);
+}
+
+.follow .number {
+    font-weight: 700;
+    color: rgb(0, 0, 0, 1);
 }
 
 .following {
-    margin-left: 60px;
-}
-
-.following h3 {
-    font-weight: 600;
-    font-size: 15px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
 }
 
 .bio {
     display: flex;
-    height: 40px;
     align-items: center;
+    max-width: 500px;
 }
 
+.bio p {
+    margin-bottom: 5px;
+    margin-top: 8px;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 22px;
+    letter-spacing: -0.32px;
+    color: rgba(133, 133, 133, 1)
+}
 
-.userAvatar img {
-    width: 150px;
-    height: 150px;
-    border-radius: 76px;
+.bookShelves h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: rgba(0, 0, 0, 1);
+    border-top: 1px solid rgba(133, 133, 133, 1);
+    padding-top: 10px;
+    margin: 0 0 20px;
 }
 
 .bookShelvesContent {
-    border-bottom: 1px solid #858585;
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -109,6 +142,7 @@ main {
     flex-direction: column;
     border-right: 1px solid #858585;
     margin-right: 30px;
+    align-items: center;
 }
 
 .bookTag button {
@@ -119,10 +153,14 @@ main {
     font-family: "Kantumruy", sans-serif;
     font-size: 15px;
     font-weight: 400;
+    font-style: normal;
+    line-height: 125%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
     color: #2F2F2F;
     background-color: #FBF8F2;
     cursor: pointer;
-    width: 285px;
+    width: 200px;
 }
 
 .books {
@@ -136,7 +174,7 @@ main {
     flex: 1;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 25px;
 }
 
@@ -152,15 +190,14 @@ main {
 
 .bookInfo {
     flex: 3.5;
+    margin-left: 30px;
 }
 
 .bookName {
-    height: 28.36px;
     margin-bottom: 11px;
 }
 
 .bookAuthor {
-    height: 18.91px;
     margin-bottom: 15px;
 }
 
@@ -172,39 +209,31 @@ main {
 
 .bookInfo h3 {
     font-family: "DM Serif Display", serif;
-    color: #2F2F2F;
-    font-size: 25px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: 125%;
-    letter-spacing: 1.28px;
     text-transform: capitalize;
+    color: #2F2F2F;
 }
 
 .bookInfo h4 {
-    font-family: "Kantumruy", sans-serif;
-    color: #858585;
+    color: rgba(133, 133, 133, 1);
+    margin-bottom: 5px;
+    margin-top: 8px;
+    font-family: "Kantumruy Pro", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    text-transform: capitalize;
     line-height: 22px;
     letter-spacing: -0.32px;
-}
-
-.seemore a {
-    font-weight: 700;
-    font-family: "Kantumruy", sans-serif;
-    color: #BFA054;
-    cursor: pointer;
-    font-weight: 700;
 }
 
 .ratings {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 18.91px;
-    margin-bottom: 20px;
 }
 
 .checked {
@@ -213,7 +242,6 @@ main {
 
 .ratings h4 {
     margin-left: 5px;
-    margin-top: 15px;
 }
 
 .myQuotes {
@@ -227,6 +255,19 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid rgba(133, 133, 133, 1);
+    padding-top: 10px;
+    margin: 20px 0;
+}
+
+.quotes h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 20px;
 }
 
 .quotes button {
@@ -234,7 +275,6 @@ main {
     border: none;
     font-weight: 400;
     background-color: #BFA054;
-    color: #2F2F2F;
     font-family: "Kantumruy", sans-serif;
     padding: 10px 40px;
     border-radius: 10px;
@@ -245,6 +285,11 @@ main {
     line-height: 125%;
     letter-spacing: 0.64px;
     text-transform: capitalize;
+}
+
+.quotes button:hover,
+.userName button:hover {
+    background-color: rgb(191, 160, 84, 0.8);
 }
 
 .avatarVsIcon {
@@ -292,13 +337,15 @@ main {
 }
 
 .quotesContent {
-    display: grid;
-    gap: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .quotes1 {
     width: 800px;
     padding: 20px;
-    background-color:  #FBF8F2;
+    background-color: #FBF8F2;
     border-radius: 18px;
+    margin-bottom: 20px;
 }

@@ -19,9 +19,25 @@ public class MainController {
     public String getTopRatedBook() {
         return "toprated";
     }
+
     @GetMapping("/user")
     public String getUser() {
         return "user";
+    }
+
+    @GetMapping("/browse/trending")
+    public String getTrending() {
+        return "trending";
+    }
+
+    @GetMapping("/browse/genres")
+    public String getGenres() {
+        return "genres";
+    }
+
+    @GetMapping("/browse/author")
+    public String getAuthor() {
+        return "author";
     }
 
 }
