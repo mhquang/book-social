@@ -15,7 +15,7 @@ public class MainController {
         return "browse";
     }
 
-    @GetMapping("/toprated")
+    @GetMapping("/browse/toprated")
     public String topRatedBook() {
         return "toprated";
     }
