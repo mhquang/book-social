@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-left: 180px;
+    margin-right: 180px;
+    padding: 50px;
+    background-color: rgba(251, 248, 242, 1);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container h3 {
+    font-size: 30px;
+    font-family: "DM Serif Display";
+    color: #2F2F2F;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.bookCoverImg img {
+    width: 200px;
+    height: 290px;
+}
+
+.bookCoverImg {
+    flex: 1;
+}
+
+.bookInfo {
+    flex: 3;
+}
+
+.bookInfo h3,
+.bookInfo h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.bookInfo h3 {
+    font-family: "DM Serif Display";
+    font-size: 25px;
+    color: #2F2F2F;
+}
+
+.bookInfo h4 {
+    font-family: "Kantumruy";
+    font-size: 16px;
+    font-weight: 500;
+    color: #858585;
+}
+
+.seemore a {
+    font-weight: 700;
+    font-family: "Kantumruy";
+    color: #BFA054;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.ratings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checked {
+    color: orange;
+}
+
+.ratings h4 {
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+.buttons {
+    flex: 1;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons .btn1 {
+    margin-bottom: 25px;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    font-family: "Kantumruy";
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #BFA054;
+    cursor: pointer;
+
+}
+
+.buttons .btn2 {
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border-width: 1px;
+    font-family: "Kantumruy";
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #FBF8F2;
+    cursor: pointer;
+}

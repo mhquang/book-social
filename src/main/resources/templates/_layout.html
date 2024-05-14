@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookaholic</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<nav class="topnav">
+    <a href="/" class="title">Bookaholic</a>
+    <div class="navTab">
+        <ul>
+            <li><a href="#home">My Books</a></li>
+            <li><a href="#news">My Quotes</a></li>
+            <li class="dropdown">
+                <a th:href="@{/browse}" class="dropdown">Browse</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/browse/toprated}">Top rated</a>
+                    <a href="#">Trending</a>
+                    <a href="#">Genres</a>
+                    <a href="#">Author</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="searchBar">
+        <label>
+            <input type="text" placeholder="Search">
+        </label>
+    </div>
+    <div class="userNotify">
+        <button type="button" class="icon-button">
+            <span class="material-icons">notifications</span>
+            <span class="icon-button__badge"></span>
+        </button>
+        <button type="button" class="icon-button">
+            <span class="material-icons">notifications</span>
+        </button>
+        <span>
+            <a th:href="@{/logout}">
+                <i class="fa fa-sign-out" style="font-size:20px;color:#2F2F2F;"></i>
+            </a>
+        </span>
+    </div>
+
+</nav>
+<div layout:fragment="content">
+    <!-- content page will override this -->
+</div>
+<footer>
+    <div class="footerContainer">
+        <div class="ourInfo">
+            <div class="logo">
+                <h3>Logo</h3>
+            </div>
+            <div class="info">
+                <div class="opentime">
+                    <h4>Opening hours</h4>
+                    <h5>Weekdays: Timings
+                    </h5>
+                    <h5>Saturday, Sunday: Timings
+                    </h5>
+                </div>
+                <div class="address">
+                    <h4>Address</h4>
+                    <h5>Level 1, 12 Sample St, Sydney NSW 2000</h5>
+                </div>
+                <div class="contact">
+                    <h4>Contact</h4>
+                    <div class="emailContainer">
+                        <i class="material-icons">email</i>
+                        <h5>info@example.com</h5>
+                    </div>
+                    <div class="phoneContainer">
+                        <i class="fas fa-phone"></i>
+                        <h5>(270) 555-0117</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="allRightR">
+            <div class="reservedContainer">
+                <h5>&#174</h5>
+                <h5>2024, All right reserved.</h5>
+            </div>
+            <div class="socialIcons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
