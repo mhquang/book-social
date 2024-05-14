@@ -6,21 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     @GetMapping("/")
-    public String home() {
+    public String getHome() {
         return "home";
     }
 
     @GetMapping("/browse")
-    public String browse() {
+    public String getBrowse() {
         return "browse";
     }
 
     @GetMapping("/browse/toprated")
-    public String topRatedBook() {
+    public String getTopRatedBook() {
         return "toprated";
     }
     @GetMapping("/user")
-    public String user() {
+    public String getUser() {
         return "user";
     }
 

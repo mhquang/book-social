@@ -6,13 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookaholic</title>
+  <title>Bookaholic</title>
     <link href="/css/user.css" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/user.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
 <div class="container" layout:fragment="content">
     <div class="userInfo">
@@ -240,20 +240,4 @@
     </div>
 </div>
 </body>
-<script>
-    const heartIcons = document.querySelectorAll('.fa-heart-o');
-    heartIcons.forEach(icon => {
-        icon.addEventListener('click', function () {
-            if (icon.classList.contains('fa-heart')) {
-                icon.classList.remove('fa-heart');
-                icon.classList.add('fa-heart-o');
-            } else {
-                icon.classList.remove('fa-heart-o');
-                icon.classList.add('fa-heart');
-            }
-        });
-    });
-
-</script>
-
 </html>
