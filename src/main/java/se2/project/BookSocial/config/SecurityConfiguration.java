@@ -23,12 +23,12 @@ public class SecurityConfiguration {
         return http
                 .userDetailsService(jpaUserDetailsService)
                 .authorizeHttpRequests(req -> req
-                        .requestMatchers("/register").permitAll()
+                        .requestMatchers("/register", "/css/**").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
                         .loginProcessingUrl("/loginProcessing")
-                        .defaultSuccessUrl("/home", true)
+                        .defaultSuccessUrl("/", true)
                         .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
