@@ -50,7 +50,15 @@
             float: left;
             margin-right: 80px;
         }
+        .userAvatarBtn img {
+            width: 35px;
+            height: 35px;
+            border-radius: 17.5px;
+        }
 
+        .userAvatarBtn {
+            margin-right: 25px;
+        }
         .topnav {
             background-color: rgba(245, 239, 225, 1);
             overflow: hidden;
@@ -468,7 +476,7 @@
             <li class="dropdown">
                 <a th:href="@{/browse}">Browse</a>
                 <div class="dropdown-content">
-                    <a th:href="@{/browse/toprated}">Top rated</a>
+                    <a th:href="@{/toprated}">Top rated</a>
                     <a href="#">Trending</a>
                     <a href="#">Genres</a>
                     <a href="#">Author</a>
@@ -484,9 +492,12 @@
             <span class="material-icons">notifications</span>
             <span class="icon-button__badge"></span>
         </button>
-        <button type="button" class="icon-button">
-            <span class="material-icons">notifications</span>
-        </button>
+        <span class="userAvatarBtn">
+                <a th:href="@{/user}">
+                    <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                         alt="avatar">
+                </a>
+        </span>
         <span>
                 <a th:href="@{/logout}">
                     <i class="fa fa-sign-out" style="font-size:20px;color:#2F2F2F;"></i>
@@ -500,7 +511,6 @@
         <div class="topRated">
             <div class="topRatedContainer">
                 <h3>Top Rated</h3>
-                <a th:href="@{/browse/toprated}">Top rated</a>
                 <button>Show More</button>
             </div>
             <div class="sliderContainer">

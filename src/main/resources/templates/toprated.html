@@ -50,7 +50,15 @@
             float: left;
             margin-right: 80px;
         }
+        .userAvatarBtn img {
+            width: 35px;
+            height: 35px;
+            border-radius: 17.5px;
+        }
 
+        .userAvatarBtn {
+            margin-right: 25px;
+        }
         .topnav {
             background-color: rgba(245, 239, 225, 1);
             overflow: hidden;
@@ -455,14 +463,17 @@
             <span class="material-icons">notifications</span>
             <span class="icon-button__badge"></span>
         </button>
-        <button type="button" class="icon-button">
-            <span class="material-icons">notifications</span>
-        </button>
+        <span class="userAvatarBtn">
+                <a th:href="@{/user}">
+                    <img th:src="@{https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg}"
+                         alt="avatar">
+                </a>
+        </span>
         <span>
                 <a th:href="@{/logout}">
                     <i class="fa fa-sign-out" style="font-size:20px;color:#2F2F2F;"></i>
                 </a>
-            </span>
+        </span>
     </div>
 
 </nav>
