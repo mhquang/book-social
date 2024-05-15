@@ -39,5 +39,9 @@ public class MainController {
     public String getAuthor() {
         return "author";
     }
+    @GetMapping("/bookdetail")
+    public String getBookDetail() {
+        return "bookdetail";
+    }
 
 }

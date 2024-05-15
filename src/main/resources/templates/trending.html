@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="_layout">
 
@@ -42,9 +42,9 @@
                 similique inventore vel? </h4>
         </div>
         <div class="buttons">
-            <button class="btn1">
+            <a class="btn1" th:href="@{/bookdetail}">
                 Book Detail
-            </button>
+            </a>
             <button class="btn2">
                 Want To Read
             </button>
