@@ -1,5 +1,4 @@
 package se2.project.BookSocial.controller;
-
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -19,7 +18,6 @@ import se2.project.BookSocial.repository.BookRepository;
 import se2.project.BookSocial.repository.GenreRepository;
 import se2.project.BookSocial.repository.UserRepository;
 import se2.project.BookSocial.repository.*;
-
 import java.util.List;
 
 @Controller
@@ -37,9 +35,6 @@ public class MainController {
 
     @Autowired
     BookshelfRepository bookshelfRepository;
-
-    @Autowired
-    UserRepository userRepository;
 
     @GetMapping("/")
     public String getHome(Model model) {
