@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="_layout">
+      layout:decorate="_layout" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -24,6 +24,7 @@
         <nav class="sidebar-nav">
             <div class="curReading">
                 <h2>Currently Reading</h2>
+                <span sec:authentication="principal.fullname"></span>
                 <div class="bookList">
                     <div class="bookTitle">
                         <img

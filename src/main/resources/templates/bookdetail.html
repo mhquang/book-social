@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="_layout">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
 <div class="container" layout:fragment="content">
     <div class="bookBriefInfo">
         <div class="img">
-<!--            <img alt="img" draggable="false" th:src="${book.cover}">-->
             <img alt="img" draggable="false" th:src="@{${book.cover}}">
         </div>
         <button class="btn2">
