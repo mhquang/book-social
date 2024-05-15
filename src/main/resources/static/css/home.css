@@ -201,7 +201,6 @@ body {
 
 .carousel .card .img {
     height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,7 +289,7 @@ body {
     align-items: center;
 }
 
-.btn1 button {
+.btn1 a {
     border-radius: 15px;
     padding: 15px 60px;
     text-decoration: none;

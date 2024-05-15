@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Detail</title>
     <link href="/css/bookdetail.css" rel="stylesheet">
-    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
 </head>
 <body>
 <div class="container" layout:fragment="content">
@@ -60,60 +60,107 @@
         </form>
     </div>
     <div class="overlay" id="overlay" onclick="closeForm()"></div>
-        <div class="bookContent">
-            <div class="bookTitle">
-                <h4>The Book of Art</h4>
-            </div>
-            <div class="bookAuthor">
+    <div class="bookContent">
+        <h4 class="bookTitle" th:text="${book.title}"></h4>
+        <h3 class="bookAuthor">Author</h3>
+        <div class="ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <h3>50 Ratings</h3>
+            <h3>34 Reviews</h3>
+        </div>
+        <div class="bookContents">
+            <p th:text="${book.description}"></p>
+        </div>
+        <div class="genres">
+            <h3>Genres:</h3>
+            <p>Romance</p>
+            <p>Fantasy</p>
+            <p>Magic</p>
+        </div>
+        <h4 class="subTitle">About The Author</h4>
+        <div class="authorContainer">
+            <div class="aboutTheAuthor">
+                <div class="img"><img
+                        src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                        alt="img" draggable="false"></div>
                 <h3>Author</h3>
+                <button>
+                    Follow
+                </button>
             </div>
-            <div class="ratings">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <h3>50 Ratings</h3>
-                <h3>34 Reviews</h3>
-            </div>
-            <div class="bookContents">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, accusamus ab, nobis
-                    repudiandae tempore voluptatum aliquid eveniet quos nulla porro ad. Quae exercitationem et,
-                    magni explicabo dolores unde odio fugit.</p>
-            </div>
-            <div class="genres">
-                <h3>Genres:</h3>
-                <p>Romance</p>
-                <p>Fantasy</p>
-                <p>Magic</p>
-            </div>
-            <h4>About The Author</h4>
-            <div class="authorContainer">
-                <div class="aboutTheAuthor">
-                    <div class="img"><img
-                            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                            alt="img" draggable="false"></div>
-                    <h3>Author</h3>
-                    <button>
-                        Follow
-                    </button>
+            <div class="authorInteraction">
+                <div class="authorFl">
+                    <div class="authorBooks">
+                        <h4>21 Books</h4>
+                    </div>
+                    <div class="authorFollowers">
+                        <h4>26.4k Followers</h4>
+                    </div>
                 </div>
-                <div class="authorInteraction">
-                    <div class="authorFl">
-                        <div class="authorBooks">
-                            <h4>21 Books</h4>
-                        </div>
-                        <div class="authorFollowers">
-                            <h4>26.4k Followers</h4>
-                        </div>
-                    </div>
-                    <div class="authorInfo">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
-                            exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
-                            explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit?
-                        </p>
-                    </div>
+                <div class="authorInfo">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
+                        exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
+                        explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h4 class="subTitle">Ratings & Reviews</h4>
+        <div class="ratingsandreview">
+            <button>
+                Write A Review
+            </button>
+            <div class="ratethisbook">
+                <h3>Rate this book</h3>
+                <div class="ratingsthisbook">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+        </div>
+        <h4 class="subTitle">Community Reviews</h4>
+        <div class="reviewsContainer">
+            <div class="allStars">
+                <div class="totalPoint">
+                    <h1>4.7</h1>
+                </div>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <h5>(578 Reviews)</h5>
+            </div>
+            <div class="voteProgress">
+                <div class="votes">
+                    <h3 class="stars">5 Stars: </h3>
+                    <h3>100 votes</h3>
+                </div>
+                <div class="votes">
+                    <h3 class="stars">4 Stars: </h3>
+                    <h3>100 votes</h3>
+                </div>
+                <div class="votes">
+                    <h3 class="stars">3 Stars: </h3>
+                    <h3>100 votes</h3>
+                </div>
+                <div class="votes">
+                    <h3 class="stars">2 Stars: </h3>
+                    <h3>100 votes</h3>
+                </div>
+                <div class="votes">
+                    <h3 class="stars">1 Stars: </h3>
+                    <h3>100 votes</h3>
                 </div>
             </div>
             <h4>Ratings & Reviews</h4>
@@ -121,23 +168,9 @@
                 <button onclick="showForm()">
                     Write A Review
                 </button>
-                <div class="ratethisbook">
-                    <h3>Rate this book</h3>
-                    <div class="ratingsthisbook">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>
             </div>
-            <h4>Community Reviews</h4>
-            <div class="reviewsContainer">
-                <div class="allStars">
-                    <div class="totolPoint">
-                        <h1>4.7</h1>
-                    </div>
+            <div class="userInteraction">
+                <div class="commentStars">
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -145,114 +178,27 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
-                    <h5>(578 Reviews)</h5>
                 </div>
-                <div class="voteProgress">
-                    <div class="votes">
-                        <h3 class="stars">5 Stars: </h3>
-                        <h3>100 votes</h3>
-                    </div>
-                    <div class="votes">
-                        <h3 class="stars">4 Stars: </h3>
-                        <h3>100 votes</h3>
-                    </div>
-                    <div class="votes">
-                        <h3 class="stars">3 Stars: </h3>
-                        <h3>100 votes</h3>
-                    </div>
-                    <div class="votes">
-                        <h3 class="stars">2 Stars: </h3>
-                        <h3>100 votes</h3>
-                    </div>
-                    <div class="votes">
-                        <h3 class="stars">1 Stars: </h3>
-                        <h3>100 votes</h3>
-                    </div>
+                <div class="seemore">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
+                        exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
+                        explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit?
+                    </p>
                 </div>
-            </div>
-            <div class="userContainer">
-                <div class="aboutTheAuthor">
-                    <div class="img"><img
-                            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                            alt="img" draggable="false"></div>
-                    <h3>Author</h3>
-                    <button>
-                        Follow
-                    </button>
-                </div>
-                <div class="userInteraction">
-                    <div class="commentStars">
-                        <div class="ratings">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
+                <h4>20 likes</h4>
+                <div class="likeVsDislike">
+                    <div class="like">
+                        <i onclick="handleClickLike(this)" id="likeButton" class="fa fa-thumbs-up"></i>
+                        <h3 id="like">Like</h3>
                     </div>
-                    <div class="seemore">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
-                            exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
-                            explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit? <a>See
-                            more</a>
-                        </p>
-                    </div>
-                    <h4>20 likes</h4>
-                    <div class="likeVsDislike">
-                        <div class="like">
-                            <i onclick="handleClickLike(this)" id="likeButton" class="fa fa-thumbs-up"></i>
-                            <h3 id="like">Like</h3>
-                        </div>
-                        <div class="dislike">
-                            <i onclick="handleClickDislike(this)" id="dislikeButton" class="fa fa-thumbs-down"></i>
-                            <h3 id="dislike">Dislike</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="userContainer">
-                <div class="aboutTheAuthor">
-                    <div class="img"><img
-                            src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                            alt="img" draggable="false"></div>
-                    <h3>Author</h3>
-                    <button>
-                        Follow
-                    </button>
-                </div>
-                <div class="userInteraction">
-                    <div class="commentStars">
-                        <div class="ratings">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                    </div>
-                    <div class="seemore">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
-                            exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
-                            explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit? <a>See
-                            more</a>
-                        </p>
-                    </div>
-                    <h4>20 likes</h4>
-                    <div class="likeVsDislike">
-                        <div class="like">
-                            <i onclick="handleClickLike(this)" id="likeButton" class="fa fa-thumbs-up"></i>
-                            <h3 id="like">Like</h3>
-                        </div>
-                        <div class="dislike">
-                            <i onclick="handleClickDislike(this)" id="dislikeButton" class="fa fa-thumbs-down"></i>
-                            <h3 id="dislike">Dislike</h3>
-                        </div>
+                    <div class="dislike">
+                        <i onclick="handleClickDislike(this)" id="dislikeButton" class="fa fa-thumbs-down"></i>
+                        <h3 id="dislike">Dislike</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
