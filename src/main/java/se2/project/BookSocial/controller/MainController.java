@@ -5,10 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import se2.project.BookSocial.model.Author;
 import se2.project.BookSocial.model.Book;
+import se2.project.BookSocial.model.Bookshelf;
 import se2.project.BookSocial.model.Genre;
-import se2.project.BookSocial.repository.BookRepository;
-import se2.project.BookSocial.repository.GenreRepository;
+import se2.project.BookSocial.repository.*;
 
 import java.util.List;
 
@@ -20,24 +21,41 @@ public class MainController {
     @Autowired
     GenreRepository genreRepository;
 
+    @Autowired
+    AuthorRepository authorRepository;
+
+    @Autowired
+    BookshelfRepository bookshelfRepository;
+
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping("/")
     public String getHome(Model model) {
         List<Book> books = bookRepository.findAll();
+        List<Bookshelf> bookshelves = bookshelfRepository.findAll();
         model.addAttribute("books" , books);
+        model.addAttribute("bookshelves", bookshelves);
         return "home";
     }
 
     @GetMapping("/browse")
-    public String getBrowse() {
+    public String getBrowse(Model model) {
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("books" , books);
         return "browse";
     }
     @GetMapping("/mybooks")
-    public String getMyBooks() {
+    public String getMyBooks(Model model) {
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("books" , books);
         return "mybooks";
     }
 
     @GetMapping("/browse/toprated")
-    public String getTopRatedBook() {
+    public String getTopRatedBook(Model model) {
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("books" , books);
         return "toprated";
     }
 
@@ -47,12 +65,16 @@ public class MainController {
     }
 
     @GetMapping("/browse/trending")
-    public String getTrending() {
+    public String getTrending(Model model) {
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("books" , books);
         return "trending";
     }
 
     @GetMapping("/browse/genres")
-    public String getGenres() {
+    public String getGenres(Model model) {
+        List<Genre> genres = genreRepository.findAll();
+        model.addAttribute("genres" , genres);
         return "genres";
     }
 
@@ -60,25 +82,20 @@ public class MainController {
     public String getAuthor() {
         return "author";
     }
-    @GetMapping("/book/{id}")
-    public String getBookDetail(@PathVariable Long id, Model model) {
-        Book book = bookRepository.getById(id);
-        List<Genre> genres = genreRepository.findByBooksId(id);
-        model.addAttribute("book", book);
-        model.addAttribute("genres", genres);
-        return "bookdetail";
-    }
 
     @GetMapping("/quotes")
     public String getQuotes() {
         return "quotes";
     }
+
     @GetMapping("/quotes/myquotes")
     public String getMyQuotes() {
         return "myquotes";
     }
+
     @GetMapping("/quotes/addquotes")
     public String getAddQuotes() {
         return "addquotes";
     }
+
 }

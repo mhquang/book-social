@@ -1,286 +1,300 @@
 body {
-            margin: 0;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+}
 
-        .container {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            min-height: 70vh;
-        }
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    min-height: 70vh;
+}
 
-        .bookShelves {
-            padding-left: 20px;
-            background-color: #F8F8F8;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
+.bookShelves {
+    padding: 0 30px;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
-        .bookShelves h2 {
-            color: #000;
-            font-family: "DM Serif Display", serif;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-            letter-spacing: 1px;
-            text-transform: capitalize;
-        }
+.bookShelves h2 {
+    color: #000;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
 
-        .myBooks {
-            padding-left: 50px;
-            display: flex;
-            flex-direction: column;
-            flex: 5;
-        }
+.myBooks {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
 
-        .myBooks h2 {
-            color: #000;
-            font-family: "DM Serif Display", serif;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-            letter-spacing: 1.28px;
-            text-transform: capitalize;
-        }
+.myBooks h2 .title {
+    color: #000;
+    font-family: "DM Serif Display", serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 1.28px;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
 
-        .bookTag button {
-            border-radius: 15px;
-            padding: 10px;
-            text-decoration: none;
-            border-width: 1px;
-            font-family: "Kantumruy", sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            color: #2F2F2F;
-            background-color: #FBF8F2;
-            cursor: pointer;
-            width: 285px;
-        }
+.bookTag button {
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border-width: 1px;
+    font-family: "Kantumruy", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #FBF8F2;
+    cursor: pointer;
+    width: 285px;
+}
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
 
-        .form-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            z-index: 1000;
-            display: none;
-            width: 500px;
-            height: 600px;
-            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
-        }
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    width: 500px;
+    height: 600px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
 
-        .bookshelf {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+.bookshelf {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .tag {
-            flex: 3;
+.tag {
+    flex: 3;
 
-        }
+}
 
-        .tag label {
-            color: #2F2F2F;
-            font-family: "Kantumruy", sans-serif;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-            letter-spacing: 0.64px;
-            text-transform: capitalize;
+.tag label {
+    color: #2F2F2F;
+    font-family: "Kantumruy", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
 
-        }
+}
 
-        .bookShelves .addTag button {
-            background-color: #F8F8F8;
-            border: none;
-            text-decoration: none;
-            color: #BFA054;
-            font-family: "Kantumruy", serif;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-            letter-spacing: 0.64px;
-            text-transform: capitalize;
-        }
+.bookShelves .addTag button {
+    background-color: #F8F8F8;
+    border: none;
+    text-decoration: none;
+    color: #BFA054;
+    font-family: "Kantumruy", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
+}
 
-        .postBtn {
-            flex: 1;
-        }
+.postBtn {
+    flex: 1;
+}
 
-        .form-container h3 {
-            font-family: "DM Serif Display", serif;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-            letter-spacing: 1.28px;
-            text-transform: capitalize;
-        }
+.form-container h3 {
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 1.28px;
+    text-transform: capitalize;
+}
 
-        .form-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-        .form-container button {
-            width: 150px;
-            height: 40px;
-            border-radius: 15px;
-            padding: 10px;
-            text-decoration: none;
-            border: none;
-            font-family: "Kantumruy";
-            font-weight: 400;
-            color: #2F2F2F;
-            background-color: #BFA054;
-            cursor: pointer;
-            font-size: 16px;
-            font-style: normal;
-            line-height: 125%;
-            letter-spacing: 0.64px;
-            text-transform: capitalize;
-        }
+.form-container button {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    font-family: "Kantumruy";
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #BFA054;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 125%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
+}
 
-        .bookshelf button {
-            margin-left: 50px;
-            width: 250px;
-            height: 52px;
-            flex-shrink: 0;
-            border-radius: 15px;
-            padding: 10px;
-            text-decoration: none;
-            border-width: 1px;
-            font-family: "Kantumruy", sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            color: #2F2F2F;
-            background-color: #FBF8F2;
-            cursor: pointer;
-            line-height: 125%;
-            letter-spacing: 0.64px;
-            text-transform: capitalize;
-        }
+.bookshelf button {
+    margin-left: 50px;
+    width: 250px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border-width: 1px;
+    font-family: "Kantumruy", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #FBF8F2;
+    cursor: pointer;
+    line-height: 125%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
+}
 
-        .content {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 25px;
-        }
+.content {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
 
-        .bookCoverImg img {
-            width: 200px;
-            height: 290px;
-        }
+.bookCoverImg img {
+    width: 100%;
+}
 
-        .bookCoverImg {
-            flex: 1;
-        }
+.bookCoverImg {
+    flex: 1;
+    margin-right: 30px;
+}
 
-        .bookInfo {
-            flex: 4;
-        }
+.bookInfo {
+    flex: 4;
+}
 
-        .bookInfo h3,
-        .bookInfo h4 {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
+.bookInfo h3,
+.bookInfo h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
-        .bookInfo h3 {
-            font-family: "DM Serif Display";
-            font-size: 25px;
-            color: #2F2F2F;
-        }
+.bookInfo h3 {
+    font-family: "DM Serif Display";
+    font-size: 25px;
+    color: #2F2F2F;
+}
 
-        .bookInfo h4 {
-            font-family: "Kantumruy";
-            font-size: 16px;
-            font-weight: 500;
-            color: #858585;
-        }
+.bookInfo h4 {
+    font-family: "Kantumruy";
+    font-size: 16px;
+    font-weight: 500;
+    color: #858585;
+}
 
-        .seemore a {
-            font-weight: 700;
-            font-family: "Kantumruy";
-            color: #BFA054;
-            cursor: pointer;
-            font-weight: 700;
-        }
+.seemore a {
+    font-weight: 700;
+    font-family: "Kantumruy";
+    color: #BFA054;
+    cursor: pointer;
+    font-weight: 700;
+}
 
-        .ratings {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+.ratings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        .checked {
-            color: orange;
-        }
+.checked {
+    color: orange;
+}
 
-        .ratings h4 {
-            margin-left: 5px;
-            margin-top: 15px;
-        }
+.ratings h4 {
+    margin-left: 5px;
+    margin-top: 15px;
+}
 
-        .buttons {
-            flex: 1;
-            margin-left: 50px;
-            margin-right: 50px;
-            display: flex;
-            flex-direction: column;
-        }
+.buttons {
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
 
-        .buttons .btn1 {
-            margin-bottom: 25px;
-            border-radius: 15px;
-            padding: 10px;
-            text-decoration: none;
-            border: none;
-            font-family: "Kantumruy";
-            font-size: 15px;
-            font-weight: 400;
-            color: #2F2F2F;
-            background-color: #BFA054;
-            cursor: pointer;
+.buttons .btn1 {
+    margin-bottom: 25px;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    font-family: "Kantumruy";
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #BFA054;
+    cursor: pointer;
+    text-align: center;
+}
 
-        }
+.buttons .btn2 {
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    border-width: 1px;
+    font-family: "Kantumruy";
+    font-size: 15px;
+    font-weight: 400;
+    color: #2F2F2F;
+    background-color: #FBF8F2;
+    cursor: pointer;
+}
 
-        .buttons .btn2 {
-            border-radius: 15px;
-            padding: 10px;
-            text-decoration: none;
-            border-width: 1px;
-            font-family: "Kantumruy";
-            font-size: 15px;
-            font-weight: 400;
-            color: #2F2F2F;
-            background-color: #FBF8F2;
-            cursor: pointer;
-        }
+.form-title h2 {
+    color: #000;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 1.28px;
+    text-transform: capitalize;
+    margin: 10px 0;
+}

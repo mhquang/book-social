@@ -28,54 +28,10 @@
             <div class="wrapper">
                 <i id="left" class="fa-solid fa-angle-left"></i>
                 <ul class="carousel">
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
+                    <li class="card" th:each="book : ${books}">
+                        <div class="img">
+                            <img th:src="@{${book.cover}}" alt="img" draggable="false">
+                        </div>
                     </li>
                 </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
@@ -91,54 +47,10 @@
             <div class="wrapper">
                 <i id="left2" class="fa-solid fa-angle-left"></i>
                 <ul class="carousel">
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
+                    <li class="card" th:each="book : ${books}">
+                        <div class="img">
+                            <img th:src="@{${book.cover}}" alt="img" draggable="false">
+                        </div>
                     </li>
                 </ul>
                 <i id="right2" class="fa-solid fa-angle-right"></i>
@@ -154,54 +66,10 @@
             <div class="wrapper">
                 <i id="left3" class="fa-solid fa-angle-left"></i>
                 <ul class="carousel">
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
+                    <li class="card" th:each="book : ${books}">
+                        <div class="img">
+                            <img th:src="@{${book.cover}}" alt="img" draggable="false">
+                        </div>
                     </li>
                 </ul>
                 <i id="right3" class="fa-solid fa-angle-right"></i>
@@ -217,54 +85,10 @@
             <div class="wrapper">
                 <i id="left4" class="fa-solid fa-angle-left"></i>
                 <ul class="carousel">
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                        <h3>The Book of Art</h3>
-                        <h4>Author</h4>
+                    <li class="card" th:each="book : ${books}">
+                        <div class="img">
+                            <img th:src="@{${book.cover}}" alt="img" draggable="false">
+                        </div>
                     </li>
                 </ul>
                 <i id="right4" class="fa-solid fa-angle-right"></i>

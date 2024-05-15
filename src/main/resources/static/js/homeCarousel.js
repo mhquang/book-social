@@ -3,8 +3,10 @@ function handleCardClick(element) {
     var bookTitle = element.parentElement.getAttribute('data-title');
     var bookRatings = element.parentElement.getAttribute('data-overallRating');
     var bookDescription = element.parentElement.getAttribute('data-description');
+    var bookAuthorsList = element.parentElement.getAttribute('data-authors').split(',');
 
     document.getElementById('bookTitle').textContent = bookTitle;
+    document.getElementById('bookAuthors').textContent = bookAuthorsList.join(', ');
     document.getElementById('bookRatingsCount').textContent = bookRatings + " Ratings";
     document.getElementById('bookDetailLink').setAttribute('href', '/book/' + bookId);
 
@@ -23,6 +25,14 @@ function handleCardClick(element) {
 
     document.querySelector(".showDetail").style.display = 'flex';
 }
+
+function handleBookshelfChange(selectElement) {
+    var bookshelfId = selectElement.value;
+    if (bookshelfId) {
+        console.log(bookshelfId)
+    }
+}
+
 
 function initCarousel(wrapperSelector) {
     const wrapper = document.querySelector(wrapperSelector);
@@ -111,7 +121,7 @@ function initCarousel(wrapperSelector) {
 }
 
 // Initialize carousels for each section
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initCarousel(".content .wrapper");
 });
 
