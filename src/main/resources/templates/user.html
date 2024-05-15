@@ -16,15 +16,40 @@
 </head>
 <body>
 <div class="container" layout:fragment="content">
+    <div class="form-popup" id="wantToReadForm">
+        <form class="form-container"
+                method="post"
+                th:action="'/saveUser'"
+        >
+            <h2>Edit Your Profile</h2>
+            <div class="form-group">
+                <label for="fullname"></label><input  type="text" id="fullname"
+                    name="fullname" placeholder="Enter your fullname" th:field="${user.fullname}" required/>
+            </div>
+            <div class="form-group">
+                <label for="bio"></label><input  type="text" id="bio" name="bio"
+                        placeholder="Write something to your bio" th:field="${user.bio}" required />
+            </div>
+            <div class="form-group">
+                <label for="avatar"></label>
+                <input  type="text" id="avatar" name="avatar"
+                       placeholder="Enter your image url link" th:field="${user.avatar}" required/>
+            </div>
+            <div class="postBtn">
+                <button type="submit" class="post">Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="userInfo">
         <div class="userAvatar">
-            <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+            <img th:src="${myUserDetails.getAvatar()}"
                  alt="userAvatar"/>
         </div>
         <div class="userDetail">
             <div class="userName">
-                <h3>Brook</h3>
-                <button>
+                <h3>[[${myUserDetails.getFullname()}]]</h3>
+                <button onclick="showForm()">
                     Edit Profile
                 </button>
             </div>
@@ -39,9 +64,7 @@
                 </div>
             </div>
             <div class="bio">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
-                    sapiente, natus id ea cupiditate odit quibusdam eum possimus placeat sed quae animi
-                    facere deleniti itaque necessitatibus ab aperiam!</p>
+                <p>[[${myUserDetails.getBio()}]]</p>
             </div>
         </div>
     </div>

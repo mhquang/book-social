@@ -12,8 +12,20 @@ public class MyUserDetails implements UserDetails {
         this.user = user;
     }
 
+    public Long getId() {
+        return user.getId();
+    }
+
     public String getFullname() {
         return user.getFullname();
+    }
+
+    public  String getAvatar() {
+        return user.getAvatar();
+    }
+
+    public String getBio() {
+        return user.getBio();
     }
     @Override
     public String getUsername() {
