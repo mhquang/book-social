@@ -17,38 +17,42 @@
 <body>
 <div class="container" layout:fragment="content">
     <div class="form-popup" id="wantToReadForm">
-        <form class="form-container"
-                method="post"
-                th:action="'/saveUser'"
-        >
+        <form class="form-container" method="post" th:action="'/saveUser'">
+            <input type="hidden" name="id" th:value="${user.id}"/>
+            <input type="hidden" name="username" th:value="${user.username}"/>
+            <input type="hidden" name="password" th:value="${user.password}"/>
             <h2>Edit Your Profile</h2>
             <div class="form-group">
-                <label for="fullname"></label><input  type="text" id="fullname"
-                    name="fullname" placeholder="Enter your fullname" th:field="${user.fullname}" required/>
+                <label for="fullname"></label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your fullname"
+                       th:field="*{user.fullname}" required/>
             </div>
             <div class="form-group">
-                <label for="bio"></label><input  type="text" id="bio" name="bio"
-                        placeholder="Write something to your bio" th:field="${user.bio}" required />
+                <label for="bio"></label>
+                <input type="text" id="bio" name="bio" placeholder="Write something to your bio" th:field="*{user.bio}"
+                       required/>
             </div>
             <div class="form-group">
                 <label for="avatar"></label>
-                <input  type="text" id="avatar" name="avatar"
-                       placeholder="Enter your image url link" th:field="${user.avatar}" required/>
+                <input type="text" id="avatar" name="avatar" placeholder="Enter your image url link"
+                       th:field="*{user.avatar}" required/>
             </div>
             <div class="postBtn">
                 <button type="submit" class="post">Save</button>
             </div>
         </form>
     </div>
+
     <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="userInfo">
         <div class="userAvatar">
-            <img th:src="${myUserDetails.getAvatar()}"
-                 alt="userAvatar"/>
+            <img th:if="${user.avatar != null}" th:src="${user.avatar}" alt="userAvatar"/>
+            <img th:if="${user.avatar == null}" src="https://picsum.photos/200" alt="userAvatar"/>
+
         </div>
         <div class="userDetail">
             <div class="userName">
-                <h3>[[${myUserDetails.getFullname()}]]</h3>
+                <h3>[[${user.getFullname()}]]</h3>
                 <button onclick="showForm()">
                     Edit Profile
                 </button>
@@ -64,7 +68,7 @@
                 </div>
             </div>
             <div class="bio">
-                <p>[[${myUserDetails.getBio()}]]</p>
+                <p>[[${user.getBio()}]]</p>
             </div>
         </div>
     </div>
@@ -100,7 +104,8 @@
                         <h4 class="description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
                             aliquam. Dolorem maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
-                            commodi nam iste dolor similique inventore vel?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora
+                            commodi nam iste dolor similique inventore vel?Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Dolorem, tempora
                             aliquam. Dolorem maiores magnam illo quasi odit tempora a magni nobis tempore asperiores,
                             commodi nam iste dolor similique inventore vel?
                         </h4>
