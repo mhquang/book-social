@@ -22,93 +22,23 @@
 <div class="container" layout:fragment="content">
     <aside class="sidebar">
         <nav class="sidebar-nav">
-            <div class="curReading">
-                <h2>Currently Reading</h2>
-                <span sec:authentication="principal.fullname"></span>
-                <div class="bookList">
+            <div th:each="bookshelf : ${bookshelves}" class="curReading">
+                <h2 th:text="${bookshelf.name}"></h2>
+                <div th:each="book : ${bookshelf.books}" class="bookList">
                     <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
+                        <img th:src="@{${book.cover}}" alt="img"/>
                     </div>
                     <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
+                        <h3 th:text="${book.title}"></h3>
+                        <h4 th:text="${book.authors.![name].join(', ')}"></h4>
+                        <p>Ratings: <span th:text="${book.overallRating}"></span></p>
                     </div>
                 </div>
-                <div class="bookList">
-                    <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
-                    </div>
-                    <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
-                    </div>
+                <div th:if="${bookshelf.books.size() > 2}" class="see-more-cur">
+                    <a>See more</a>
                 </div>
-                <a class="see-more-cur">See more</a>
             </div>
             <br>
-            <div class="curReading">
-                <h2>Want To Read</h2>
-                <div class="bookList">
-                    <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
-                    </div>
-                    <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
-                    </div>
-                </div>
-                <div class="bookList">
-                    <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
-                    </div>
-                    <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
-                    </div>
-                </div>
-                <a class="see-more-cur">See more</a>
-            </div>
-            <br>
-            <div class="curReading">
-                <h2>Read</h2>
-                <div class="bookList">
-                    <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
-                    </div>
-                    <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
-                    </div>
-                </div>
-                <div class="bookList">
-                    <div class="bookTitle">
-                        <img
-                                th:src="@{https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198}"
-                                alt="img"/>
-                    </div>
-                    <div class="bookInfo">
-                        <h3>History of the Ancient World's Society</h3>
-                        <h4>Dr. Tikendranath Sarkar</h4>
-                        <p>Ratings</p>
-                    </div>
-                </div>
-                <a class="see-more-cur">See more</a>
-            </div>
         </nav>
     </aside>
     <div class="content">
@@ -120,6 +50,7 @@
                         <div class="img"
                              th:data-id="${book.id}"
                              th:data-title="${book.title}"
+                             th:data-authors="${#strings.arrayJoin(book.authors.![name], ',')}"
                              th:data-overallRating="${book.overallRating}"
                              th:data-description="${book.description}">
                             <img th:src="@{${book.cover}}" alt="img" draggable="false" onclick="handleCardClick(this)">
@@ -132,7 +63,7 @@
         <div class="showDetail">
             <div class="bookDetails">
                 <h1 id="bookTitle"></h1>
-                <h4>Author</h4>
+                <h4 id="bookAuthors"></h4>
                 <div class="ratings" id="bookRatings">
                 </div>
                 <h4 id="bookRatingsCount"></h4>
@@ -140,12 +71,13 @@
             </div>
             <div class="buttons">
                 <div class="btn1">
-                    <a id="bookDetailLink" >Book Detail</a>
+                    <a id="bookDetailLink">Book Detail</a>
                 </div>
                 <div class="btn2">
-                    <button>
-                        Want to read
-                    </button>
+                    <select id="bookshelfDropdown" onchange="handleBookshelfChange(this)">
+                        <option value="">Select Bookshelf</option>
+                        <option th:each="bookshelf : ${bookshelves}" th:value="${bookshelf.id}" th:text="${bookshelf.name}"></option>
+                    </select>
                 </div>
             </div>
         </div>

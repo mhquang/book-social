@@ -16,6 +16,7 @@ body {
     background-color: #F8F8F8;
     color: #fff;
     padding: 20px;
+    width: 300px;
 }
 
 .curReading {
@@ -301,7 +302,7 @@ body {
     cursor: pointer;
 }
 
-.btn2 button {
+.btn2 #bookshelfDropdown {
     border-radius: 15px;
     padding: 15px 60px;
     text-decoration: none;
