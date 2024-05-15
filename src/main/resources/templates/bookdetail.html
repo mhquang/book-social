@@ -8,33 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Detail</title>
     <link href="/css/bookdetail.css" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
 </head>
 <body>
 <div class="container" layout:fragment="content">
-        <div class="bookBriefInfo">
-            <div class="img"><img
-                    src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                    alt="img" draggable="false"></div>
-            <button class="btn1">
-                Book Detail
-            </button>
-            <button class="btn2">
-                Want To Read
-            </button>
-            <div class="ratingsCmts">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <button class="btn3" onclick="showForm()">
-                Write A Review
-            </button>
+    <div class="bookBriefInfo">
+        <div class="img"><img
+                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                alt="img" draggable="false"></div>
+        <button class="btn2">
+            Want To Read
+        </button>
+        <div class="ratingsCmts">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
         </div>
+        <button class="btn3" onclick="showForm()">
+            Write A Review
+        </button>
+    </div>
     <div class="form-popup" id="wantToReadForm">
         <form class="form-container">
             <h3>Write Your Review</h3>
@@ -61,8 +58,12 @@
     </div>
     <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="bookContent">
-        <h4 class="bookTitle" th:text="${book.title}"></h4>
-        <h3 class="bookAuthor">Author</h3>
+        <div class="bookTitle">
+            <h4>The Book of Art</h4>
+        </div>
+        <div class="bookAuthor">
+            <h3>Author</h3>
+        </div>
         <div class="ratings">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -73,7 +74,9 @@
             <h3>34 Reviews</h3>
         </div>
         <div class="bookContents">
-            <p th:text="${book.description}"></p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, accusamus ab, nobis
+                repudiandae tempore voluptatum aliquid eveniet quos nulla porro ad. Quae exercitationem et,
+                magni explicabo dolores unde odio fugit.</p>
         </div>
         <div class="genres">
             <h3>Genres:</h3>
@@ -112,7 +115,7 @@
         </div>
         <h4 class="subTitle">Ratings & Reviews</h4>
         <div class="ratingsandreview">
-            <button>
+            <button onclick="showForm()">
                 Write A Review
             </button>
             <div class="ratethisbook">
@@ -129,7 +132,7 @@
         <h4 class="subTitle">Community Reviews</h4>
         <div class="reviewsContainer">
             <div class="allStars">
-                <div class="totalPoint">
+                <div class="totolPoint">
                     <h1>4.7</h1>
                 </div>
                 <div class="ratings">
@@ -163,10 +166,15 @@
                     <h3>100 votes</h3>
                 </div>
             </div>
-            <h4>Ratings & Reviews</h4>
-            <div class="ratingsandreview">
-                <button onclick="showForm()">
-                    Write A Review
+        </div>
+        <div class="userContainer">
+            <div class="aboutTheAuthor">
+                <div class="img"><img
+                        src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                        alt="img" draggable="false"></div>
+                <h3>Author</h3>
+                <button>
+                    Follow
                 </button>
             </div>
             <div class="userInteraction">
@@ -180,9 +188,11 @@
                     </div>
                 </div>
                 <div class="seemore">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam
                         exercitationem facilis impedit quaerat commodi odio, ipsum modi dolore dolorum officia
-                        explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit?
+                        explicabo aut fuga praesentium perspiciatis accusamus eum ratione reprehenderit? <a>See
+                        more</a>
                     </p>
                 </div>
                 <h4>20 likes</h4>
