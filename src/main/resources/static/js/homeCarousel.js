@@ -1,6 +1,27 @@
-function handleCardClick() {
-    var showDetail = document.querySelector(".showDetail");
-    showDetail.style.display = 'flex';
+function handleCardClick(element) {
+    var bookId = element.parentElement.getAttribute('data-id');
+    var bookTitle = element.parentElement.getAttribute('data-title');
+    var bookRatings = element.parentElement.getAttribute('data-overallRating');
+    var bookDescription = element.parentElement.getAttribute('data-description');
+
+    document.getElementById('bookTitle').textContent = bookTitle;
+    document.getElementById('bookRatingsCount').textContent = bookRatings + " Ratings";
+    document.getElementById('bookDetailLink').setAttribute('href', '/book/' + bookId);
+
+    if (bookDescription.length > 300) {
+        bookDescription = bookDescription.substring(0, 300) + "...";
+    }
+    document.getElementById('bookDescription').textContent = bookDescription;
+
+    var ratingsContainer = document.getElementById('bookRatings');
+    ratingsContainer.innerHTML = '';
+    for (var i = 1; i <= 5; i++) {
+        var star = document.createElement('span');
+        star.className = 'fa fa-star' + (i <= bookRatings ? ' checked' : '');
+        ratingsContainer.appendChild(star);
+    }
+
+    document.querySelector(".showDetail").style.display = 'flex';
 }
 
 function initCarousel(wrapperSelector) {

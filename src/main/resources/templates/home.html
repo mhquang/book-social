@@ -115,40 +115,14 @@
             <div class="wrapper">
                 <i id="left" class="fa-solid fa-angle-left"></i>
                 <ul class="carousel">
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
-                    </li>
-                    <li class="card" onclick="handleCardClick()">
-                        <div class="img"><img
-                                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                                alt="img" draggable="false"></div>
+                    <li class="card" th:each="book : ${books}">
+                        <div class="img"
+                             th:data-id="${book.id}"
+                             th:data-title="${book.title}"
+                             th:data-overallRating="${book.overallRating}"
+                             th:data-description="${book.description}">
+                            <img th:src="${book.cover}" alt="img" draggable="false" onclick="handleCardClick(this)">
+                        </div>
                     </li>
                 </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
@@ -156,27 +130,16 @@
         </div>
         <div class="showDetail">
             <div class="bookDetails">
-                <h1>The Book of Art</h1>
+                <h1 id="bookTitle"></h1>
                 <h4>Author</h4>
-                <div class="ratings">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <h4>50 Ratings</h4>
+                <div class="ratings" id="bookRatings">
                 </div>
-                <h4 class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
-                    sapiente, natus id ea cupiditate odit quibusdam eum possimus placeat sed quae animi
-                    facere deleniti itaque necessitatibus ab aperiam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellat tenetur
-                    sapiente, natus id ea cupiditate odit quibusdam eum possimus placeat sed quae animi
-                    facere deleniti itaque necessitatibus ab aperiam!</h4>
+                <h4 id="bookRatingsCount"></h4>
+                <h4 class="description" id="bookDescription"></h4>
             </div>
             <div class="buttons">
                 <div class="btn1">
-                    <button>
-                        <a th:href="@{/bookdetail}">Book Detail</a>
-                    </button>
+                    <a id="bookDetailLink" >Book Detail</a>
                 </div>
                 <div class="btn2">
                     <button>
