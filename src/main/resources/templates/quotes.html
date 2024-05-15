@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link href="/css/quotes.css" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/quotes.js}" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="container" layout:fragment="content">
+    <div class="myQuotes">
+        <div class="quotes">
+            <h1>Quotes</h1>
+            <div class="buttons">
+                <a class="btn1" th:href="@{/quotes/myquotes}">
+                    My Quotes
+                </a>
+                <a class="btn2" th:href="@{/quotes/addquotes}">
+                    Add A Quote
+                </a>
+            </div>
+        </div>
+        <div class="quotesContent">
+            <div class="quotes1">
+                <div class="avatarVsIcon">
+                    <div class="avatarVsName">
+                        <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                             alt="avatar">
+                        <h3>Jess Santiago</h3>
+                    </div>
+                    <i class="fa fa-heart-o" style="font-size:25px;color:#000001"></i>
+                </div>
+                <div class="quotesMainContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
+                        voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
+                        maxime ea architecto earum, in ipsa quis quia.
+                    </p>
+                </div>
+            </div>
+            <div class="quotes1">
+                <div class="avatarVsIcon">
+                    <div class="avatarVsName">
+                        <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
+                             alt="avatar">
+                        <h3>Jess Santiago</h3>
+                    </div>
+                    <i class="fa fa-heart-o"
+                       style="font-size:25px;color:#000001"></i>
+                </div>
+                <div class="quotesMainContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam id, natus ad
+                        voluptatem suscipit omnis voluptates tempora! Labore, quos repudiandae? Doloremque nemo
+                        maxime ea architecto earum, in ipsa quis quia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
