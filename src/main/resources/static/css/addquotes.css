@@ -1,0 +1,171 @@
+body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 20px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+
+        .myQuotes {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .buttons .btn1 {
+            margin-right: 50px;
+        }
+
+        .quotes {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 0.2px solid #000000;
+            padding-bottom: 20px;
+        }
+
+        .curEndPoint {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .quotes .buttons a {
+            text-decoration: none;
+            border: none;
+            font-weight: 400;
+            background-color: #BFA054;
+            color: #2F2F2F;
+            font-family: "Kantumruy", sans-serif;
+            padding: 10px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .quotes a {
+            text-decoration: none;
+            border: none;
+            font-weight: 400;
+            background-color: #BFA054;
+            color: #2F2F2F;
+            font-family: "Kantumruy", sans-serif;
+            padding: 10px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .addQuotesContent {
+            padding-top: 20px;
+        }
+
+        .formContainer {
+            margin-top: 50px;
+        }
+
+        .inputField input {
+            width: 700px;
+            height: 350px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 1px solid #F6F6F6;
+            background: #F6F6F6;
+        }
+
+        .inputField {
+            position: relative;
+        }
+
+        .inputField input::placeholder {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #858585;
+            font-family: "Kantumruy", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 0.64px;
+            text-transform: capitalize;
+        }
+
+        .chooseAuthor {
+            margin-top: 50px;
+        }
+
+        .chooseAuthor button {
+            width: 333px;
+            height: 52px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            padding: 10px;
+            text-decoration: none;
+            border: 1px solid #000;
+            font-family: "Kantumruy", sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #2F2F2F;
+            background-color: #FBF8F2;
+            cursor: pointer;
+        }
+
+        .postBtn {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .postBtn .save {
+            display: flex;
+            width: 214px;
+            padding: 16px 64px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            border-radius: 15px;
+            background: #BFA054;
+            cursor: pointer;
+        }
+
+        .postBtn .cancel {
+            border: none;
+            display: flex;
+            width: 214px;
+            padding: 16px 64px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 15px;
+            background: #F5EFE1;
+            margin-left: 40px;
+            cursor: pointer;
+        }

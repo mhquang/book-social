@@ -25,6 +25,10 @@ public class MainController {
     public String getBrowse() {
         return "browse";
     }
+    @GetMapping("/mybooks")
+    public String getMyBooks() {
+        return "mybooks";
+    }
 
     @GetMapping("/browse/toprated")
     public String getTopRatedBook() {
@@ -57,4 +61,16 @@ public class MainController {
         return "bookdetail";
     }
 
+    @GetMapping("/quotes")
+    public String getQuotes() {
+        return "quotes";
+    }
+    @GetMapping("/quotes/myquotes")
+    public String getMyQuotes() {
+        return "myquotes";
+    }
+    @GetMapping("/quotes/addquotes")
+    public String getAddQuotes() {
+        return "addquotes";
+    }
 }

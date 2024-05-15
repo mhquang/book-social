@@ -14,14 +14,52 @@
 </head>
 <body>
 <div class="container" layout:fragment="content">
-    <div class="bookBriefInfo">
-        <div class="img">
-            <img th:src="${book.cover}" alt="img" draggable="false" height="100%">
+        <div class="bookBriefInfo">
+            <div class="img"><img
+                    src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                    alt="img" draggable="false"></div>
+            <button class="btn1">
+                Book Detail
+            </button>
+            <button class="btn2">
+                Want To Read
+            </button>
+            <div class="ratingsCmts">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <button class="btn3" onclick="showForm()">
+                Write A Review
+            </button>
         </div>
-        <button class="btn2">
-            Want To Read
-        </button>
+    <div class="form-popup" id="wantToReadForm">
+        <form class="form-container">
+            <h3>Write Your Review</h3>
+            <div class="myRate">
+                <h3>My Rate:</h3>
+            </div>
+            <div class="myRatings">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="uthink">
+                <h3>What do you think?</h3>
+            </div>
+            <div class="inputField">
+                <input type="text" id="wahtdouthink" name="wahtdouthink" placeholder="Write A Review..."><br>
+            </div>
+            <div class="postBtn">
+                <button type="button" class="post" onclick="postTag()">Post</button>
+            </div>
+        </form>
     </div>
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="bookContent">
         <h4 class="bookTitle" th:text="${book.title}"></h4>
         <h3 class="bookAuthor">Author</h3>
@@ -125,15 +163,10 @@
                     <h3>100 votes</h3>
                 </div>
             </div>
-        </div>
-        <div class="userContainer">
-            <div class="aboutTheAuthor">
-                <div class="img"><img
-                        src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg"
-                        alt="img" draggable="false"></div>
-                <h3>Author</h3>
-                <button>
-                    Follow
+            <h4>Ratings & Reviews</h4>
+            <div class="ratingsandreview">
+                <button onclick="showForm()">
+                    Write A Review
                 </button>
             </div>
             <div class="userInteraction">

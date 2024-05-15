@@ -1,426 +1,554 @@
-body {
-    margin: 0;
-    padding: 0;
-}
 
-.container {
-    padding: 50px 150px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    min-height: 70vh;
-}
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+                    padding: 50px;
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    min-height: 70vh;
+                }
 
-.bookBriefInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    flex: 1;
-}
+                .bookBriefInfo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    width: 315px;
+                }
 
-.img img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-}
+                .bookBriefInfo .btn1 {
+                    margin-bottom: 20px;
+                    border-radius: 15px;
+                    padding: 10px;
+                    text-decoration: none;
+                    border: none;
+                    font-family: "Kantumruy";
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #2F2F2F;
+                    background-color: #BFA054;
+                    cursor: pointer;
+                    font-style: normal;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.bookBriefInfo .btn1 {
-    width: 200px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    padding: 10px;
-    text-decoration: none;
-    border: none;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: #2F2F2F;
-    background-color: #BFA054;
-    cursor: pointer;
-    font-style: normal;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .bookBriefInfo .btn2 {
+                    margin-bottom: 20px;
+                    border-radius: 15px;
+                    padding: 10px;
+                    text-decoration: none;
+                    border-width: 1px;
+                    font-family: "Kantumruy";
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #2F2F2F;
+                    background-color: #FBF8F2;
+                    cursor: pointer;
+                    font-style: normal;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.bookBriefInfo .btn2 {
-    width: 200px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    padding: 10px;
-    text-decoration: none;
-    border-width: 1px;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: #2F2F2F;
-    background-color: #FBF8F2;
-    cursor: pointer;
-    font-style: normal;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .bookBriefInfo .btn3 {
+                    margin-bottom: 20px;
+                    text-decoration: none;
+                    background-color: white;
+                    border: none;
+                    font-size: medium;
+                    color: var(--Accent-1, #BFA054);
+                    font-family: "Kantumruy", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                }
 
-.bookContent {
-    flex: 2;
-}
+                .ratingsCmts {
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .img img {
+                    width: 315px;
+                    height: 460px;
+                    margin-bottom: 20px;
+                }
+
+                .bookContent {
+                    width: 850px;
+                    margin-right: 400px;
+                }
 
 
-.bookTitle {
-    color: #2F2F2F;
-    font-family: "DM Serif Display", serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-}
+                .bookTitle h4 {
+                    color: #2F2F2F;
+                    font-family: "DM Serif Display", serif;
+                    font-size: 35px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
 
-.bookAuthor {
-    color: #858585;
-    font-family: "DM Serif Display", serif;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 1.28px;
-    text-transform: capitalize;
-    margin: 0;
-}
+                .bookAuthor h3 {
+                    color: #858585;
+                    font-family: "DM Serif Display";
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 1.28px;
+                    text-transform: capitalize;
+                }
 
-.ratings {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+                .bookTitle,
+                .bookAuthor,
+                .ratings {
+                    height: 40.73px;
+                }
 
-.ratings h3 {
-    margin-left: 10px;
-    color: #858585;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
 
-.bookContents p {
-    color: rgba(47, 47, 47, 1);
-    font-family: "Kantumruy", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .ratings {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
 
-.genres {
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    border-bottom: 1px solid rgba(133, 133, 133, 1);
-}
+                .ratings h3 {
+                    margin-left: 10px;
+                    color: #858585;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.genres h3 {
-    font-family: "DM Serif Display", serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-}
+                .bookContents p {
+                    color: rgba(47, 47, 47, 1);
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.genres p {
-    margin-left: 30px;
-    padding: 8px 37px;
-    border-radius: 10px;
-    border: 1px solid rgba(47, 47, 47, 1);
-    background-color: rgba(245, 239, 225, 1);
-    font-family: "Kantumruy", sans-serif;
-    color: var(rgba(47, 47, 47, 1), #2F2F2F);
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .genres {
+                    padding-bottom: 35px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    border-bottom: 0.2px solid #000000;
+                }
 
-.subTitle {
-    font-family: "DM Serif Display", serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    margin: 20px 0 0;
-}
+                .genres p {
+                    margin-left: 30px;
+                    padding: 8px 37px;
+                    border-radius: 10px;
+                    border: 1px solid rgba(47, 47, 47, 1);
+                    background-color: rgba(245, 239, 225, 1);
+                    font-family: "Kantumruy", sans-serif;
+                    color: var(rgba(47, 47, 47, 1), #2F2F2F);
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.authorContainer {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-bottom: 1px solid rgba(133, 133, 133, 1);
-    padding: 0 40px 30px;
-}
+                .authorContainer {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 0.2px solid #000000;
+                    padding-bottom: 35px;
+                }
 
-.aboutTheAuthor {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+                .userContainer {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
 
-.aboutTheAuthor img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    margin-bottom: 0;
-    margin-top: 20px;
-}
+                .aboutTheAuthor {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
-.aboutTheAuthor h3 {
-    font-family: "DM Serif Display", serif;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 25px */
-    letter-spacing: 0.8px;
-    text-transform: capitalize;
-    margin: 10px 0;
-}
+                .aboutTheAuthor img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 30px;
+                    margin-bottom: 0px;
+                    margin-top: 20px;
+                }
 
-.aboutTheAuthor button {
-    width: 130px;
-    padding: 8px 37px;
-    border: none;
-    border-radius: 10px;
-    background: #BFA054;
-    color: #2F2F2F;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .aboutTheAuthor button {
+                    width: 130px;
+                    padding: 8px 37px;
+                    border: none;
+                    border-radius: 10px;
+                    background: #BFA054;
+                    color: #2F2F2F;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.authorInteraction {
-    margin-left: 50px;
-}
+                .authorInteraction {
+                    margin-left: 80px;
+                }
 
-.authorFl {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-height: 35px;
-}
+                .authorFl {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    max-height: 35px;
+                }
 
-.authorFl .authorFollowers {
-    margin-left: 20px;
-}
+                .authorFl .authorFollowers {
+                    margin-left: 20px;
+                }
 
-.authorFl h4 {
-    color: #858585;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.56px;
-    text-transform: capitalize;
-}
+                .authorFl h4 {
+                    color: #858585;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.56px;
+                    text-transform: capitalize;
+                }
 
-.authorInfo p {
-    color: rgba(47, 47, 47, 1);
-    font-family: "Kantumruy", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px; /* 137.5% */
-    letter-spacing: -0.32px;
-}
+                .ratingsandreview button {
+                    display: flex;
+                    width: 285px;
+                    padding: 16px 64px;
+                    justify-content: center;
+                    gap: 10px;
+                    border: none;
+                    border-radius: 10px;
+                    background: #BFA054;
+                    color: #2F2F2F;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.ratingsandreview {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    border-bottom: 1px solid rgba(133, 133, 133, 1);
-    margin-top: 10px;
-    padding-bottom: 30px;
-}
+                .ratingsandreview {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    border-bottom: 0.2px solid #000000;
+                    padding-bottom: 35px;
 
-.ratingsandreview button {
-    display: flex;
-    width: 285px;
-    padding: 16px 64px;
-    justify-content: center;
-    gap: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #BFA054;
-    color: #2F2F2F;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                }
 
-.ratethisbook {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 60px;
-    height: 52px;
-    margin-bottom: 15px;
-}
+                .ratethisbook {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 60px;
+                    height: 52px;
+                    margin-bottom: 15px;
+                }
 
-.ratethisbook h3 {
-    color: #2F2F2F;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.64px;
-    text-transform: capitalize;
-}
+                .ratethisbook h3 {
+                    color: #2F2F2F;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.64px;
+                    text-transform: capitalize;
+                }
 
-.reviewsContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 20px;
-}
+                .reviewsContainer {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
 
-.allStars {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
-    justify-content: center;
-}
+                .votes {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
 
-.allStars h5 {
-    color: #858585;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.56px;
-    text-transform: capitalize;
-}
+                .votes .stars,
+                .votes h3 {
+                    color: #000;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.4px;
+                    text-transform: capitalize;
+                }
 
-.allStars h1 {
-    color: #000;
-    text-align: center;
-    font-family: "DM Serif Display", serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 20px;
-}
+                .totolPoint {
+                    margin-bottom: 0px;
+                    margin-top: 20px;
+                }
 
-.totalPoint {
-    margin-bottom: 0;
-}
+                .allStars {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
-.voteProgress {
-    margin-left: 90px;
-}
+                .allStars h5 {
+                    color: #858585;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.56px;
+                    text-transform: capitalize;
+                }
 
-.votes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+                .allStars h1 {
+                    color: #000;
+                    text-align: center;
+                    font-family: "DM Serif Display", serif;
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
 
-.votes .stars,
-.votes h3 {
-    color: #000;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.4px;
-    text-transform: capitalize;
-    margin: 10px 0;
-}
+                .voteProgress {
+                    margin-left: 110px;
+                }
 
-.userContainer {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0 0;
-}
+                .userContainer {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
 
-.userInteraction {
-    margin-left: 80px;
-    border-bottom: 1px solid rgba(133, 133, 133, 1);
-    padding-bottom: 10px;
-}
+                .userInteraction {
+                    margin-left: 80px;
+                    border-bottom: 0.2px solid #000000;
+                    padding-bottom: 10px;
+                }
 
-.userInteraction h4 {
-    color: #858585;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.56px;
-    text-transform: capitalize;
-    margin: 0;
-}
+                .userInteraction h4 {
+                    color: #858585;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 125%;
+                    letter-spacing: 0.56px;
+                    text-transform: capitalize;
+                }
 
-.likeVsDislike {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-}
+                .seemore a {
+                    font-weight: 700;
+                    font-family: "Kantumruy", sans-serif;
+                    color: #BFA054;
+                    cursor: pointer;
+                    font-weight: 700;
+                }
 
-.like {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+                .likeVsDislike {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
 
-.like h3,
-.dislike h3 {
-    margin: 10px;
-    color: #2F2F2F;
-    font-family: "Kantumruy", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: -0.32px;
-}
+                .like {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
 
-.dislike {
-    margin-left: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+                .like h3,
+                .dislike h3 {
+                    margin-left: 10px;
+                    color: #2F2F2F;
+                    font-family: "Kantumruy", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    letter-spacing: -0.32px;
+                }
+
+                .dislike {
+                    margin-left: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 999;
+                    display: none;
+                }
+
+                .form-popup {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: white;
+                    padding: 20px;
+                    z-index: 1000;
+                    display: none;
+                    width: 500px;
+                    height: 600px;
+                    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+                }
+                .postBtn {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                        }
+                        .form-container h3 {
+                                    font-family: "DM Serif Display", serif;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 125%;
+                                    letter-spacing: 1.28px;
+                                    text-transform: capitalize;
+                                    color: #0D0C22;
+                                    text-align: center;
+                                    font-size: 28px;
+                                    font-style: normal;
+                    }
+
+                        .form-container button {
+                                    margin-top: 40px;
+                                    text-align: center;
+                                    width: 150px;
+                                    height: 40px;
+                                    border-radius: 15px;
+                                    padding: 10px;
+                                    text-decoration: none;
+                                    border: none;
+                                    font-family: "Kantumruy", sans-serif;
+                                    font-weight: 400;
+                                    color: #2F2F2F;
+                                    background-color: #BFA054;
+                                    cursor: pointer;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    line-height: 125%;
+                                    letter-spacing: 0.64px;
+                                    text-transform: capitalize;
+                        }
+                        .myRate {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: start;
+                                    align-items: center;
+                                }
+
+                                .myRate h3 {
+                                    color: #0D0C22;
+                                    font-family: "DM Serif Display", serif;
+                                    font-size: 20px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 125%;
+                                    letter-spacing: 0.88px;
+                                    text-transform: capitalize;
+                                }
+
+                                .uthink {
+                                    display: flex;
+                                    justify-content: start;
+                                }
+
+                                .uthink h3 {
+                                    color: #0D0C22;
+                                    font-family: "DM Serif Display", serif;
+                                    font-size: 20px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 125%;
+                                    letter-spacing: 0.88px;
+                                    text-transform: capitalize;
+                                }
+
+                                .myRatings {
+                                    display: flex;
+                                    justify-content: center;
+                                }
+
+                                .inputField input {
+                                    width: 500px;
+                                    height: 150px;
+                                    flex-shrink: 0;
+                                    border-radius: 8px;
+                                    border: 1px solid #F6F6F6;
+                                    background: #F6F6F6;
+                                }
+
+                                .inputField {
+                                    position: relative;
+                                }
+
+                                .inputField input::placeholder {
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 10px;
+                                    color: #858585;
+                                    font-family: "Kantumruy", sans-serif;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 125%;
+                                    letter-spacing: 0.64px;
+                                    text-transform: capitalize;
+                                }
+
+                                .inputField {
+                                    display: flex;
+                                    justify-content: center;
+                                }
+

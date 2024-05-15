@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+    <link href="/css/mybooks.css" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/mybooks.js}" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="container" layout:fragment="content">
+    <div class="bookShelves">
+        <h2>My Bookshelves</h2>
+        <div class="bookTag">
+            <button>
+                Read
+            </button>
+        </div>
+        <div class="myTag">
+            <h2>Tag</h2>
+            <input type="checkbox"  name="romantic" value="value1">
+            <label for="romantic">Romantic</label><br>
+            <input type="checkbox"  name="school" value="value2">
+            <label for="school">School</label><br>
+            <input type="checkbox"  name="mystery" value="value3">
+            <label for="mystery">Mystery</label><br><br>
+        </div>
+        <div class="addTag">
+            <button>
+                Add New Tag
+            </button>
+        </div>
+    </div>
+    <div class="myBooks">
+        <h2>My Books</h2>
+        <div class="form-popup" id="wantToReadForm">
+            <form class="form-container">
+                <h3>Add book to bookshelf</h3>
+                <div class="bookshelf">
+                    <h2>Bookshelf</h2>
+                    <button>
+                        Want To Read
+                    </button>
+                </div>
+                <div class="tag">
+                    <h2>Tag</h2>
+                    <input type="checkbox" id="Romantic" name="romantic" value="value1">
+                    <label for="romantic">Romantic</label><br>
+                    <input type="checkbox" id="School" name="school" value="value2">
+                    <label for="school">School</label><br>
+                    <input type="checkbox" id="Mystery" name="mystery" value="value3">
+                    <label for="mystery">Mystery</label><br><br>
+                </div>
+                <div class="postBtn">
+                    <button type="button" class="post" onclick="postTag()">Post</button>
+                </div>
+            </form>
+        </div>
+        <div class="overlay" id="overlay" onclick="closeForm()"></div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2" onclick="showForm()">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bookCoverImg">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
+                     alt="bookCover">
+            </div>
+            <div class="bookInfo">
+                <h3>The Book of Art</h3>
+                <h4>Author</h4>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4>50 Ratings</h4>
+                </div>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, tempora aliquam. Dolorem
+                    maiores magnam illo quasi odit tempora a magni nobis tempore asperiores, commodi nam iste dolor
+                    similique inventore vel?</h4>
+                <div class="seemore">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facilis enim possimus
+                        commodi laborum asperiores saepe a nemo incidunt <a>See more</a></h4>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn1">
+                    Book Detail
+                </button>
+                <button class="btn2">
+                    Want To Read
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
