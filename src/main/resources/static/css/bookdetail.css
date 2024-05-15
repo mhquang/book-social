@@ -134,7 +134,6 @@ body {
     font-weight: 400;
     line-height: 125%;
     letter-spacing: 0.64px;
-    text-transform: capitalize;
 }
 
 .genres {
@@ -144,6 +143,7 @@ body {
     justify-content: start;
     align-items: center;
     border-bottom: 1px solid rgba(133, 133, 133, 1);
+    max-width: 100%;
 }
 
 .genres h3 {
@@ -157,7 +157,7 @@ body {
 }
 
 .genres p {
-    margin-left: 30px;
+    margin-left: 20px;
     padding: 8px 37px;
     border-radius: 10px;
     border: 1px solid rgba(47, 47, 47, 1);

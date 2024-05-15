@@ -2,6 +2,8 @@ package se2.project.BookSocial.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "books")
 public class Book {
@@ -14,6 +16,14 @@ public class Book {
     private double overallRating;
     private int ratingsNumber;
     private int reviewsNumber;
+
+    @ManyToMany
+    @JoinTable(
+            name = "book_genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id")
+    )
+    private Set<Genre> genres;
 
     public Book() {
     }
@@ -85,5 +95,13 @@ public class Book {
 
     public void setReviewsNumber(int reviewsNumber) {
         this.reviewsNumber = reviewsNumber;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 }

@@ -6,7 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import se2.project.BookSocial.model.Book;
+import se2.project.BookSocial.model.Genre;
 import se2.project.BookSocial.repository.BookRepository;
+import se2.project.BookSocial.repository.GenreRepository;
 
 import java.util.List;
 
@@ -14,6 +16,10 @@ import java.util.List;
 public class MainController {
     @Autowired
     BookRepository bookRepository;
+
+    @Autowired
+    GenreRepository genreRepository;
+
     @GetMapping("/")
     public String getHome(Model model) {
         List<Book> books = bookRepository.findAll();
@@ -57,7 +63,9 @@ public class MainController {
     @GetMapping("/book/{id}")
     public String getBookDetail(@PathVariable Long id, Model model) {
         Book book = bookRepository.getById(id);
+        List<Genre> genres = genreRepository.findByBooksId(id);
         model.addAttribute("book", book);
+        model.addAttribute("genres", genres);
         return "bookdetail";
     }
 

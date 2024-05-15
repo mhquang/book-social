@@ -8,16 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Detail</title>
     <link href="/css/bookdetail.css" rel="stylesheet">
-    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script type="text/javascript" th:src="@{/js/bookdetail.js}" defer></script>
 </head>
 <body>
 <div class="container" layout:fragment="content">
     <div class="bookBriefInfo">
-        <div class="img"><img
-                src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198"
-                alt="img" draggable="false"></div>
+        <div class="img">
+<!--            <img alt="img" draggable="false" th:src="${book.cover}">-->
+            <img alt="img" draggable="false" th:src="@{${book.cover}}">
+        </div>
         <button class="btn2">
             Want To Read
         </button>
@@ -59,7 +60,7 @@
     <div class="overlay" id="overlay" onclick="closeForm()"></div>
     <div class="bookContent">
         <div class="bookTitle">
-            <h4>The Book of Art</h4>
+            <h4 th:text="${book.title}"></h4>
         </div>
         <div class="bookAuthor">
             <h3>Author</h3>
@@ -74,15 +75,11 @@
             <h3>34 Reviews</h3>
         </div>
         <div class="bookContents">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, accusamus ab, nobis
-                repudiandae tempore voluptatum aliquid eveniet quos nulla porro ad. Quae exercitationem et,
-                magni explicabo dolores unde odio fugit.</p>
+            <p th:text="${book.description}"></p>
         </div>
         <div class="genres">
             <h3>Genres:</h3>
-            <p>Romance</p>
-            <p>Fantasy</p>
-            <p>Magic</p>
+            <p th:each="genre : ${genres}" th:text="${genre.name}"></p>
         </div>
         <h4 class="subTitle">About The Author</h4>
         <div class="authorContainer">

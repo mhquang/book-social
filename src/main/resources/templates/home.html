@@ -121,7 +121,7 @@
                              th:data-title="${book.title}"
                              th:data-overallRating="${book.overallRating}"
                              th:data-description="${book.description}">
-                            <img th:src="${book.cover}" alt="img" draggable="false" onclick="handleCardClick(this)">
+                            <img th:src="@{${book.cover}}" alt="img" draggable="false" onclick="handleCardClick(this)">
                         </div>
                     </li>
                 </ul>
