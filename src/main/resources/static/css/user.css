@@ -270,7 +270,7 @@ body {
     margin: 0 0 20px;
 }
 
-.quotes button {
+.quotes a {
     text-decoration: none;
     border: none;
     font-weight: 400;
@@ -287,7 +287,7 @@ body {
     text-transform: capitalize;
 }
 
-.quotes button:hover,
+.quotes a:hover,
 .userName button:hover {
     background-color: rgb(191, 160, 84, 0.8);
 }

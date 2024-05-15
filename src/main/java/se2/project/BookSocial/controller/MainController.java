@@ -1,5 +1,4 @@
 package se2.project.BookSocial.controller;
-
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import se2.project.BookSocial.model.*;
 import se2.project.BookSocial.repository.*;
-
 import java.util.List;
 
 @Controller
